@@ -54,6 +54,7 @@ public class UnacademySearchSteps {
 	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
 	    //
 		
+		//This is to check 
 
 	    driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
 	    Thread.sleep(4000);
