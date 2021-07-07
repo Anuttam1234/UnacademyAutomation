@@ -122,6 +122,11 @@ public class SearchPF {
 	{  
 		SearchTextBox.click();
 	}
+	public void searchInput()
+	{  
+		SearchTextBox.click();
+	}
 
+	
 
 }
