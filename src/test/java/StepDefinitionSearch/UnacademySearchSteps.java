@@ -55,11 +55,11 @@ public class UnacademySearchSteps {
 	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
 	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
 	    //
-		
-		//This is to check 
+	
 
-	    driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
-	    Thread.sleep(4000);
+//	    driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
+	    search.searchTextBox();
+		Thread.sleep(4000);
 	    List<String> data = dataTable.asList();
 		String searchItem = data.get(0);
 		System.out.println(searchItem);

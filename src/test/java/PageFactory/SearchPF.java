@@ -109,7 +109,6 @@ public class SearchPF {
 
 	public SearchPF(WebDriver driver) {
 		// TODO Auto-generated constructor stub
-		super();
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		
@@ -117,7 +116,12 @@ public class SearchPF {
 	
 	public void homePage()
 	{  
-		HomePage.isDisplayed();
+		System.out.println(HomePage.isDisplayed());
 	}
+	public void searchTextBox()
+	{  
+		SearchTextBox.click();
+	}
+
 
 }
