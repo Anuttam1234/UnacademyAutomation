@@ -28,6 +28,7 @@ public class UnacademySearchSteps {
 	@Before
 	public void setUp() {
 		driver = Utility.launchApplication(1, baseUrl);
+		search = new SearchPF(driver);
 	}
 	
 	//path and url in config.properties
