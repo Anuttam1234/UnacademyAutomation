@@ -17,16 +17,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import Libraries.Utility;
+import PageFactory.SearchPF;
 
 public class UnacademySearchSteps {
 
+	
+	
 	String baseUrl="https://unacademy.com/goal/upsc-civil-services-examination-ias-preparation/KSCGY";
-	
-	WebDriver driver = Utility.launchApplication(1, baseUrl);
-	
+	WebDriver driver;
 	@Before
 	public void setUp() {
-		
+		driver = Utility.launchApplication(1, baseUrl);
 	}
 	
 	//path and url in config.properties
@@ -39,9 +40,8 @@ public class UnacademySearchSteps {
 	@Given("User on unacademy home page")
 	public void user_on_unacademy_home_page() {
 	    System.out.println(driver.getTitle());
-	    //*[@id="preSubscribedBlocks"]/div[1]/div[1]/h1/text()[1] || Crack UPSC CSE - GS with 
 	    
-	    System.out.println("Home Page: "+driver.findElement(By.xpath("//h1[contains(text()[1],'Crack UPSC CSE - GS with')]")).isDisplayed());
+	    System.out.println("Home Page: "+driver.findElement(By.xpath(HomePage)).isDisplayed());
 
 	}
 
