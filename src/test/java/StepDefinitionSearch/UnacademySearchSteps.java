@@ -21,7 +21,7 @@ import PageFactory.SearchPF;
 
 public class UnacademySearchSteps {
 
-	
+	SearchPF search;
 	
 	String baseUrl="https://unacademy.com/goal/upsc-civil-services-examination-ias-preparation/KSCGY";
 	WebDriver driver;
@@ -41,8 +41,10 @@ public class UnacademySearchSteps {
 	public void user_on_unacademy_home_page() {
 	    System.out.println(driver.getTitle());
 	    
-	    System.out.println("Home Page: "+driver.findElement(By.xpath(HomePage)).isDisplayed());
+	    
+//	    System.out.println("Home Page: "+driver.findElement(By.xpath("//h1[contains(text()[1],'Crack UPSC CSE - GS with')]")).isDisplayed());
 
+	    search.homePage();
 	}
 
 	@When("user searches educator name")
@@ -112,9 +114,7 @@ public class UnacademySearchSteps {
 
 	@Then("user clicks on cross icon")
 	public void user_clicks_on_cross_icon() {
-//		driver.findElement(By.xpath("//*[name()='svg']/*[name()='path']")).click();  
 
-		//h2[text()='Dedications']/preceding::*[1]
 				driver.findElement(By.xpath("//h2[text()='Dedications']/preceding::*[1]")).click();
 		
 	}
