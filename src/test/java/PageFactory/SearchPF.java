@@ -27,7 +27,7 @@ public class SearchPF {
 	public
 	WebElement EducatorProfile;
 	
-	public boolean educatorProfile()
+	public boolean isEducatorProfiledisplayed()
 	{  
 		return EducatorProfile.isDisplayed();
 	}
@@ -36,7 +36,7 @@ public class SearchPF {
 	public
 	WebElement DedicationIcon;
 	
-	public void dedicationIcon()
+	public void dedicationIconClicked()
 	{  
 		DedicationIcon.click();
 	}
@@ -45,33 +45,74 @@ public class SearchPF {
 	@FindBy(xpath= "//h2[contains(text(),'Dedications')]")
 	public
 	WebElement DedicationDrawyer;
+	public void isDedicationDrawyerOpen()
+	{  
+		DedicationIcon.click();
+	}
 	@FindBy(xpath= "//img[@alt='hats'])[position()=1]")  
 	public
 	WebElement Hat1;
+	public void hat1Clicked()
+	{  
+		Hat1.click();
+	}
+	
 	@FindBy(xpath= "//img[@alt='hats'])[position()=2]")
 	public
 	WebElement Hat2;
+	public void hat2Clicked()
+	{  
+		Hat2.click();
+	}
 	@FindBy(xpath= "//img[@alt='hats'])[position()=3]")
 	public
 	WebElement Hat3;
+	public void hat3Clicked()
+	{  
+		Hat3.click();
+	}
 	@FindBy(xpath= "//img[@alt='hats'])[position()=4]")
 	public
 	WebElement Hat4;
+	public void hat4Clicked()
+	{  
+		Hat4.click();
+	}
 	@FindBy(xpath= "//img[@alt='hats'])[position()=5]")
 	public
 	WebElement Hat5;
+	public void hat5Clicked()
+	{  
+		Hat5.click();
+	}
 	@FindBy(xpath= "//h2[text()='Dedications']/preceding::*[1]")
 	public
-	WebElement DedicationCross;
+	WebElement DedicationCrossIcon;
+	public void dedicationCrossIconClicked()
+	{  
+		DedicationCrossIcon.click();
+	}
 	@FindBy(xpath= "//*[@id=\\\"__next\\\"]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div/div/section/h6")
 	public
 	WebElement ProfileHighlighter;
+	public void profileHighlighterClicked()
+	{  
+		ProfileHighlighter.click();
+	}
 	@FindBy(xpath= "//h2[contains(text(),'Bank Exams Educators')]")
 	public
 	WebElement ProfileDrawyer;
+	public void profileDrawyerOpened()
+	{  
+		ProfileDrawyer.click();
+	}
 	@FindBy(xpath= "//h2[text()='Bank Exams Educators']/preceding::*[1]")
 	public
-	WebElement ProfileCross;
+	WebElement ProfileCrossIcon;
+	public void profileCrossIconClicked()
+	{  
+		ProfileCrossIcon.click();
+	}
 	@FindBy(xpath= "//div[@id=\\\"searchTab\\\"]/div[contains(@class,'MuiInputBase-root')]")
 	public
 	WebElement SearchfromTrending;
