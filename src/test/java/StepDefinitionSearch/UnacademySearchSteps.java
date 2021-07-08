@@ -53,7 +53,7 @@ public class UnacademySearchSteps {
 	    
 //	    System.out.println("Home Page: "+driver.findElement(By.xpath("//h1[contains(text()[1],'Crack UPSC CSE - GS with')]")).isDisplayed());
 
-	    search.homePage();
+	    search.homePageDisplayed();
 	    
 //	    Assert.assertEquals(6000,ac.deposit(1000));
 	}
@@ -69,7 +69,7 @@ public class UnacademySearchSteps {
 	
 
 //	    driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
-	    search.searchTextBox(); //change method name
+	    search.searchTextBoxClicked(); //change method name
 		Thread.sleep(4000);
 	    List<String> data = dataTable.asList();
 		String searchItem = data.get(0);
@@ -188,14 +188,14 @@ public class UnacademySearchSteps {
 
 	
 	@When("user searches course name as {string}")
-	public void user_searches_course_name_as(String CourseName) throws InterruptedException {
+	public void user_searches_course_name_as(String courseName) throws InterruptedException {
 		
 		driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
 	    Thread.sleep(4000);
 
 		WebElement Coursename = driver.findElement(By.xpath("//input[@id='searchInput']"));                                                              
 		System.out.println(Coursename.isDisplayed());
-		Coursename.sendKeys(CourseName);
+		Coursename.sendKeys(courseName);
 		
 		System.out.println("Search value inserted");
 		

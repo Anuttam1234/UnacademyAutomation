@@ -13,155 +13,186 @@ public class SearchPF {
 	@CacheLookup
 	@FindBy(xpath= "//h1[contains(text()[1],'Crack UPSC CSE - GS with')]")
 	public
-	WebElement HomePage;
+	WebElement homePage;
 	@FindBy(xpath= "//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")
 	public
-	WebElement SearchTextBox;
+	WebElement searchTextBox;
 	@FindBy(xpath= "//input[@id='searchInput']")
 	public
-	WebElement SearchInput;
+	WebElement searchInput;
 	@FindBy(xpath= "//a[contains(@href,'@sahilchhapola')]") // need change name 
 	public 
-	WebElement SearchSahil;
+	WebElement searchSahil;
 	@FindBy(xpath= "//h2[contains(@class,'EducatorHeader__Title')]")
 	public
-	WebElement EducatorProfile;
+	WebElement educatorProfile;
 	
 	public boolean isEducatorProfiledisplayed()
 	{  
-		return EducatorProfile.isDisplayed();
+		return educatorProfile.isDisplayed();
 	}
 	
 	@FindBy(xpath= "//div[contains(@class,'EducatorDedicationStats__Stats')]")
 	public
-	WebElement DedicationIcon;
+	WebElement dedicationIcon;
 	
 	public void dedicationIconClicked()
 	{  
-		DedicationIcon.click();
+		dedicationIcon.click();
 	}
 	
 	
 	@FindBy(xpath= "//h2[contains(text(),'Dedications')]")
 	public
-	WebElement DedicationDrawyer;
+	WebElement dedicationDrawyer;
 	public void isDedicationDrawyerOpen()
 	{  
-		DedicationIcon.click();
+		dedicationIcon.click();
 	}
 	@FindBy(xpath= "//img[@alt='hats'])[position()=1]")  
 	public
-	WebElement Hat1;
+	WebElement hat1;
 	public void hat1Clicked()
 	{  
-		Hat1.click();
+		hat1.click();
 	}
 	
 	@FindBy(xpath= "//img[@alt='hats'])[position()=2]")
 	public
-	WebElement Hat2;
+	WebElement hat2;
 	public void hat2Clicked()
 	{  
-		Hat2.click();
+		hat2.click();
 	}
 	@FindBy(xpath= "//img[@alt='hats'])[position()=3]")
 	public
-	WebElement Hat3;
+	WebElement hat3;
 	public void hat3Clicked()
 	{  
-		Hat3.click();
+		hat3.click();
 	}
 	@FindBy(xpath= "//img[@alt='hats'])[position()=4]")
 	public
-	WebElement Hat4;
+	WebElement hat4;
 	public void hat4Clicked()
 	{  
-		Hat4.click();
+		hat4.click();
 	}
 	@FindBy(xpath= "//img[@alt='hats'])[position()=5]")
 	public
-	WebElement Hat5;
+	WebElement hat5;
 	public void hat5Clicked()
 	{  
-		Hat5.click();
+		hat5.click();
 	}
 	@FindBy(xpath= "//h2[text()='Dedications']/preceding::*[1]")
 	public
-	WebElement DedicationCrossIcon;
+	WebElement dedicationCrossIcon;
 	public void dedicationCrossIconClicked()
 	{  
-		DedicationCrossIcon.click();
+		dedicationCrossIcon.click();
 	}
 	@FindBy(xpath= "//*[@id=\\\"__next\\\"]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div/div/section/h6")
 	public
-	WebElement ProfileHighlighter;
+	WebElement profileHighlighter;
 	public void profileHighlighterClicked()
 	{  
-		ProfileHighlighter.click();
+		profileHighlighter.click();
 	}
 	@FindBy(xpath= "//h2[contains(text(),'Bank Exams Educators')]")
 	public
-	WebElement ProfileDrawyer;
+	WebElement profileDrawyer;
 	public void profileDrawyerOpened()
 	{  
-		ProfileDrawyer.click();
+		profileDrawyer.click();
 	}
 	@FindBy(xpath= "//h2[text()='Bank Exams Educators']/preceding::*[1]")
 	public
-	WebElement ProfileCrossIcon;
+	WebElement profileCrossIcon;
 	public void profileCrossIconClicked()
 	{  
-		ProfileCrossIcon.click();
+		profileCrossIcon.click();
 	}
 	@FindBy(xpath= "//div[@id=\\\"searchTab\\\"]/div[contains(@class,'MuiInputBase-root')]")
 	public
-	WebElement SearchfromTrending;
-	public void profileCrossIconClicked()
+	WebElement searchFromTrending;
+	public void searchFromTrending()
 	{  
-		ProfileCrossIcon.click();
+		searchFromTrending.click();
 	}
 //	@FindBy(xpath= "//h1[contains(text()[1],'Crack UPSC CSE - GS with')]")
 //	public
 //	WebElement HomePage;
 	@FindBy(xpath= "//*[@id=\\\"searchTab\\\"]/div[2]/div/div/a[2]")
 	public
-	WebElement TrendingSearchItem;
-	public void profileCrossIconClicked()
+	WebElement trendingSearchItem;
+	public void trendingSearchItemClicked()
 	{  
-		ProfileCrossIcon.click();
+		trendingSearchItem.click();
 	}
 	@FindBy(xpath= "//*[@id=\\\"__next\\\"]/div[1]/div[1]/div[2]/h4[1]")
 	public
-	WebElement EducatorSearchList;
-	public void isEducatorSearchListDisplayed()
+	WebElement educatorSearchList;
+	public boolean isEducatorSearchListDisplayed()
 	{  
-		ProfileCrossIcon.click();
+		return educatorSearchList.isDisplayed();
 	}
 	@FindBy(xpath= "//div[@id=\\\"searchTab\\\"]/div[contains(@class,'MuiInputBase-root')]")
 	public
-	WebElement ClickSearchTextBox;
-	public void profileCrossIconClicked()
+	WebElement clickSearchTextBox;
+	public void searchBoxForCourseClicked()
 	{  
-		ProfileCrossIcon.click();
+		clickSearchTextBox.click();
 	}
 	@FindBy(xpath= "//input[@id='searchInput']")
 	public
-	WebElement InputCourse;
+	WebElement inputCourse;
+	public void searchBoxClicked(String courseName)
+	{  
+		inputCourse.sendKeys(courseName);
+	}
 	@FindBy(xpath= "//*[@id=\\\"searchTab\\\"]/div[2]/div/div/a[1]/div/div")
 	public
-	WebElement ClickSearchItem;
+	WebElement clickSearchItem;
+	
+	public void searchItemClicked()
+	{  
+		clickSearchItem.click();
+	}
+	
 	@FindBy(xpath= "//h2[contains(text(),'Courses & test series')]")
 	public
-	WebElement CourseSearchListApear;
+	WebElement courseSearchListAppear;
+	
+	public boolean courseSearchListAppeared()
+	{  
+		return courseSearchListAppear.isDisplayed();
+	}
+	
 	@FindBy(xpath= "//*[@id=\\\"__next\\\"]/div[1]/div[1]/div[2]/div[4]/div/div[1]/div/a/div")
 	public
-	WebElement ClickCourse;
+	WebElement clickCourse;
+	
+	public void clickCourse() {
+		clickCourse.click();
+	}
+	
 	@FindBy(xpath= "//h2[text()='Login']/preceding::*[1]")
 	public
-	WebElement CoursePreviewPage;
+	WebElement coursePreviewPage;
+	
+	public void coursePreviewPage() {
+		coursePreviewPage.isDisplayed();
+	}
+	
 	@FindBy(xpath= "//*[@id=\\\"__next\\\"]/div[1]/div/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/button[2]")
 	public
-	WebElement ShareButton;
+	WebElement shareButton;
+	
+	public void shareButtonClicked() {
+		coursePreviewPage.isDisplayed();
+	}
+	
 	@FindBy(xpath= "//h3[contains(text(),'Share via')]")
 	public
 	WebElement ShareBox;
@@ -178,79 +209,30 @@ public class SearchPF {
 	
 
 	public SearchPF(WebDriver driver) {
-		// TODO Auto-generated constructor stub
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		
 	}
 	
-	public void homePage()
+	public void homePageDisplayed()
 	{  
-		System.out.println(HomePage.isDisplayed()); //return it to the step definition file and there I need to write Assert functions.
+		System.out.println(homePage.isDisplayed()); //return it to the step definition file and there I need to write Assert functions.
 	}
-	public void searchTextBox()
+	public void searchTextBoxClicked()
 	{  
-		SearchTextBox.click();
+		searchTextBox.click();
 	}
 	public void searchInput(String searchItem)
 	{  
-		SearchInput.sendKeys(searchItem);
+		searchInput.sendKeys(searchItem);
 	}
 	public void searchSahil()
 	{  
-		SearchSahil.click();
+		searchSahil.click();
 	}
 
 	
 	
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
-//	public void searchInput()
-//	{  
-//		SearchTextBox.click();
-//	}
 	
 
 	
