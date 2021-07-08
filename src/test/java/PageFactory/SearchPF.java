@@ -116,18 +116,34 @@ public class SearchPF {
 	@FindBy(xpath= "//div[@id=\\\"searchTab\\\"]/div[contains(@class,'MuiInputBase-root')]")
 	public
 	WebElement SearchfromTrending;
+	public void profileCrossIconClicked()
+	{  
+		ProfileCrossIcon.click();
+	}
 //	@FindBy(xpath= "//h1[contains(text()[1],'Crack UPSC CSE - GS with')]")
 //	public
 //	WebElement HomePage;
 	@FindBy(xpath= "//*[@id=\\\"searchTab\\\"]/div[2]/div/div/a[2]")
 	public
 	WebElement TrendingSearchItem;
+	public void profileCrossIconClicked()
+	{  
+		ProfileCrossIcon.click();
+	}
 	@FindBy(xpath= "//*[@id=\\\"__next\\\"]/div[1]/div[1]/div[2]/h4[1]")
 	public
 	WebElement EducatorSearchList;
+	public void isEducatorSearchListDisplayed()
+	{  
+		ProfileCrossIcon.click();
+	}
 	@FindBy(xpath= "//div[@id=\\\"searchTab\\\"]/div[contains(@class,'MuiInputBase-root')]")
 	public
 	WebElement ClickSearchTextBox;
+	public void profileCrossIconClicked()
+	{  
+		ProfileCrossIcon.click();
+	}
 	@FindBy(xpath= "//input[@id='searchInput']")
 	public
 	WebElement InputCourse;
