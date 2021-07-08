@@ -17,7 +17,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
+import junit.framework.Assert;
 import Libraries.UtilitySearch;
 import PageFactory.SearchPF;
 
@@ -34,7 +34,7 @@ public class UnacademySearchSteps {
 		properties.load(reader);	
 		String baseUrl=properties.getProperty("baseUrl");
 		String browser = properties.getProperty("browser");
-		driver = UtilitySearch.launchApplication(browser, baseUrl); //made 1 to "chrome"
+		driver = UtilitySearch.launchApplication(browser, baseUrl); 
 		search = new SearchPF(driver);
 	}
 	
@@ -42,18 +42,20 @@ public class UnacademySearchSteps {
 	
 	@After
 	public void driverClose() {
-		driver.close();
+		driver.quit();
 	}
 //	
 	
 	@Given("User on unacademy home page")
 	public void user_on_unacademy_home_page() {
-	    System.out.println(driver.getTitle());
+	    System.out.println(driver.getTitle()); 
 	    
 	    
 //	    System.out.println("Home Page: "+driver.findElement(By.xpath("//h1[contains(text()[1],'Crack UPSC CSE - GS with')]")).isDisplayed());
 
 	    search.homePage();
+	    
+//	    Assert.assertEquals(6000,ac.deposit(1000));
 	}
 
 	@When("user searches educator name")
@@ -67,21 +69,25 @@ public class UnacademySearchSteps {
 	
 
 //	    driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
-	    search.searchTextBox();
+	    search.searchTextBox(); //change method name
 		Thread.sleep(4000);
 	    List<String> data = dataTable.asList();
 		String searchItem = data.get(0);
 		System.out.println(searchItem);
-		WebElement test = driver.findElement(By.xpath("//input[@id='searchInput']"));                                                              
-		System.out.println(test.isDisplayed());
-		test.sendKeys(searchItem);
+//		WebElement test = driver.findElement(By.xpath("//input[@id='searchInput']"));                                                              
+//		System.out.println(test.isDisplayed());
+//		test.sendKeys(searchItem);
+		
+		search.searchInput(searchItem);
 		
 		System.out.println("Search value inserted");
 		
 		Thread.sleep(2000);
 		
 		
-		driver.findElement(By.xpath("//a[contains(@href,'@sahilchhapola')]")).click();
+//		driver.findElement(By.xpath("//a[contains(@href,'@sahilchhapola')]")).click();
+		
+		search.searchSahil();
 		
 		Thread.sleep(5000); //use explicit wait
 		

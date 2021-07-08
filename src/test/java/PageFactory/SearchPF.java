@@ -20,19 +20,32 @@ public class SearchPF {
 	@FindBy(xpath= "//input[@id='searchInput']")
 	public
 	WebElement SearchInput;
-	@FindBy(xpath= "//a[contains(@href,'@sahilchhapola')]")
-	public
+	@FindBy(xpath= "//a[contains(@href,'@sahilchhapola')]") // need change name 
+	public 
 	WebElement SearchSahil;
 	@FindBy(xpath= "//h2[contains(text(),'Sahil Chhapola')]")
 	public
 	WebElement EducatorProfile;
+	
+	public boolean educatorProfile()
+	{  
+		return EducatorProfile.isDisplayed();
+	}
+	
 	@FindBy(xpath= "//div[@class=\\\"MuiPaper-root Paper-f6r4fl-0 EducatorDedicationStats__Stats-sc-1hlwx9w-0 hpAChX bKHyGh MuiPaper-elevation1 MuiPaper-rounded\\\"]")
 	public
 	WebElement DedicationIcon;
+	
+	public void dedicationIcon()
+	{  
+		DedicationIcon.click();
+	}
+	
+	
 	@FindBy(xpath= "//h2[contains(text(),'Dedications')]")
 	public
 	WebElement DedicationDrawyer;
-	@FindBy(xpath= "//*[@id=\\\"DrawerPaper\\\"]/div[2]/div[1]/div[1]")
+	@FindBy(xpath= "//*[@id=\\\"DrawerPaper\\\"]/div[2]/div[1]/div[1]")   //img[@alt='hats'][0]
 	public
 	WebElement Hat1;
 	@FindBy(xpath= "//*[@id=\\\"DrawerPaper\\\"]/div[2]/div[2]/div[1]")
@@ -122,10 +135,66 @@ public class SearchPF {
 	{  
 		SearchTextBox.click();
 	}
-	public void searchInput()
+	public void searchInput(String searchItem)
 	{  
-		SearchTextBox.click();
+		SearchInput.sendKeys(searchItem);
 	}
+	public void searchSahil()
+	{  
+		SearchSahil.click();
+	}
+
+	
+	
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+//	public void searchInput()
+//	{  
+//		SearchTextBox.click();
+//	}
+	
 
 	
 
