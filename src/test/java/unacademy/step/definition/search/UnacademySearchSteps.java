@@ -1,6 +1,6 @@
-package StepDefinitionSearch;
+package unacademy.step.definition.search;
 
-import java.io.FileNotFoundException;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
@@ -17,9 +17,8 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import junit.framework.Assert;
-import Libraries.UtilitySearch;
-import PageFactory.SearchPF;
+import unacademy.libraries.UtilitySearch;
+import unacademy.page.factory.SearchPF;
 
 public class UnacademySearchSteps {
 
@@ -91,7 +90,7 @@ public class UnacademySearchSteps {
 		
 //		driver.findElement(By.xpath("//a[contains(@href,'@sahilchhapola')]")).click();
 		
-		search.searchSahil();
+		search.searchEducatorName();
 		
 		Thread.sleep(5000); //use explicit wait
 		

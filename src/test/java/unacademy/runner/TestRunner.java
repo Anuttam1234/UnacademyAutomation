@@ -1,4 +1,4 @@
-package runner;
+package unacademy.runner;
 
 import org.junit.runner.RunWith;
 

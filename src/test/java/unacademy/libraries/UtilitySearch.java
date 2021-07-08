@@ -1,4 +1,4 @@
-package Libraries;
+package unacademy.libraries;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;

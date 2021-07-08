@@ -1,4 +1,4 @@
-package PageFactory;
+package unacademy.page.factory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,7 +22,7 @@ public class SearchPF {
 	WebElement searchInput;
 	@FindBy(xpath= "//a[contains(@href,'@sahilchhapola')]") // need change name 
 	public 
-	WebElement searchSahil;
+	WebElement searchEducator;
 	@FindBy(xpath= "//h2[contains(@class,'EducatorHeader__Title')]")
 	public
 	WebElement educatorProfile;
@@ -102,9 +102,9 @@ public class SearchPF {
 	@FindBy(xpath= "//h2[contains(text(),'Bank Exams Educators')]")
 	public
 	WebElement profileDrawyer;
-	public void profileDrawyerOpened()
+	public boolean profileDrawyerOpened()
 	{  
-		profileDrawyer.click();
+		return profileDrawyer.isDisplayed();
 	}
 	@FindBy(xpath= "//h2[text()='Bank Exams Educators']/preceding::*[1]")
 	public
@@ -123,6 +123,7 @@ public class SearchPF {
 //	@FindBy(xpath= "//h1[contains(text()[1],'Crack UPSC CSE - GS with')]")
 //	public
 //	WebElement HomePage;
+	
 	@FindBy(xpath= "//*[@id=\\\"searchTab\\\"]/div[2]/div/div/a[2]")
 	public
 	WebElement trendingSearchItem;
@@ -130,7 +131,7 @@ public class SearchPF {
 	{  
 		trendingSearchItem.click();
 	}
-	@FindBy(xpath= "//*[@id=\\\"__next\\\"]/div[1]/div[1]/div[2]/h4[1]")
+	@FindBy(xpath= "//h2[contains(text(),'Educators')]")
 	public
 	WebElement educatorSearchList;
 	public boolean isEducatorSearchListDisplayed()
@@ -169,7 +170,7 @@ public class SearchPF {
 		return courseSearchListAppear.isDisplayed();
 	}
 	
-	@FindBy(xpath= "//*[@id=\\\"__next\\\"]/div[1]/div[1]/div[2]/div[4]/div/div[1]/div/a/div")
+	@FindBy(xpath= "//img[contains(@loading,'lazy')]")
 	public
 	WebElement clickCourse;
 	
@@ -179,10 +180,15 @@ public class SearchPF {
 	
 	@FindBy(xpath= "//h2[text()='Login']/preceding::*[1]")
 	public
+	WebElement crossLoginIcon;
+	
+	@FindBy(xpath= "//h1[contains(text(),'Comprehensive Course on')]")
+	public
 	WebElement coursePreviewPage;
 	
-	public void coursePreviewPage() {
-		coursePreviewPage.isDisplayed();
+	public boolean coursePreviewPage() {
+		crossLoginIcon.click();
+		return coursePreviewPage.isDisplayed();
 	}
 	
 	@FindBy(xpath= "//*[@id=\\\"__next\\\"]/div[1]/div/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/button[2]")
@@ -190,23 +196,39 @@ public class SearchPF {
 	WebElement shareButton;
 	
 	public void shareButtonClicked() {
-		coursePreviewPage.isDisplayed();
+		shareButton.click();
 	}
 	
 	@FindBy(xpath= "//h3[contains(text(),'Share via')]")
 	public
-	WebElement ShareBox;
+	WebElement shareBox;
+	
+	public void shareDialogueBoxDisplayed() {
+		shareBox.click();
+	}
+	
 	@FindBy(xpath= "/html/body/div[3]/div[3]/div/div/div[2]/h6[2]")
 	public
-	WebElement CopyShareLink;
+	WebElement copyShareLink;
+	
+	public void shareLinkCopied() {
+		copyShareLink.click();
+	}
 	@FindBy(xpath= "//h3[text()='Share via']/following::*[2]")
 	public
-	WebElement FacebookIcon;
+	WebElement faceBookIcon;
+	
+	public void clickFaceBookIcon() {
+		faceBookIcon.click();
+	}
+	
 	@FindBy(xpath= "//h3[text()='Share via']/following::*[4]")
 	public
-	WebElement TwitterIcon;
+	WebElement twitterIcon;
 	
-	
+	public void clickTwitterIcon() {
+		twitterIcon.click();
+	}
 
 	public SearchPF(WebDriver driver) {
 		this.driver = driver;
@@ -226,9 +248,9 @@ public class SearchPF {
 	{  
 		searchInput.sendKeys(searchItem);
 	}
-	public void searchSahil()
+	public void searchEducatorName()
 	{  
-		searchSahil.click();
+		searchEducator.click();
 	}
 
 	
