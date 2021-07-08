@@ -27,15 +27,16 @@ public class UnacademySearchSteps {
 	WebDriver driver;
 	@Before
 	public void setUp() {
-		driver = Utility.launchApplication(1, baseUrl);
+		driver = Utility.launchApplication(1, baseUrl); //made 1 to "chrome"
 		search = new SearchPF(driver);
 	}
 	
-	//path and url in config.properties
-//	@After
-//	public void driverClose() {
-//		driver.close();
-//	}
+	//path and url in config.properties in src/test/resources
+	
+	@After
+	public void driverClose() {
+		driver.close();
+	}
 //	
 	
 	@Given("User on unacademy home page")

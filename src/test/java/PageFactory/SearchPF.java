@@ -116,7 +116,7 @@ public class SearchPF {
 	
 	public void homePage()
 	{  
-		System.out.println(HomePage.isDisplayed());
+		System.out.println(HomePage.isDisplayed()); //return it to the step definition file and there I need to write Assert functions.
 	}
 	public void searchTextBox()
 	{  
