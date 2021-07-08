@@ -28,8 +28,8 @@ Feature: Searching module
     Then course preview page appear
     And user clicks on share button
     And user copies the share link
-    And user clicks on the facebook icon
-    And user clicks on the facebook icon
+    And user clicks on the social media icon
+    
 
     Examples: 
       | CourseName |

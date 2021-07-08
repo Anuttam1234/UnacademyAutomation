@@ -1,14 +1,16 @@
 package StepDefinitionSearch;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -16,18 +18,23 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import Libraries.Utility;
+import Libraries.UtilitySearch;
 import PageFactory.SearchPF;
 
 public class UnacademySearchSteps {
 
 	SearchPF search;
 	
-	String baseUrl="https://unacademy.com/goal/upsc-civil-services-examination-ias-preparation/KSCGY";
 	WebDriver driver;
 	@Before
-	public void setUp() {
-		driver = Utility.launchApplication(1, baseUrl); //made 1 to "chrome"
+	public void setUp() throws IOException {
+		FileReader reader = new FileReader("C:\\Users\\anuttam\\eclipse-workspace\\UnacademyAutomation\\src\\test\\resources\\config\\config.properties");
+		
+		Properties properties = new Properties();
+		properties.load(reader);	
+		String baseUrl=properties.getProperty("baseUrl");
+		String browser = properties.getProperty("browser");
+		driver = UtilitySearch.launchApplication(browser, baseUrl); //made 1 to "chrome"
 		search = new SearchPF(driver);
 	}
 	
@@ -223,8 +230,8 @@ public class UnacademySearchSteps {
 	    driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/div/div[2]/h6[2]")).click();
 	    System.out.println("Share link copied!");
 	}
-	@Then("user clicks on the facebook icon")
-	public void user_clicks_on_the_facebook_icon() {
+	@Then("user clicks on the social media icon")
+	public void user_clicks_on_the_social_media_icon() {
 	    driver.findElement(By.xpath("//h3[text()='Share via']/following::*[2]")).click();
 	    driver.findElement(By.xpath("//h3[text()='Share via']/following::*[4]")).click();
 	}
