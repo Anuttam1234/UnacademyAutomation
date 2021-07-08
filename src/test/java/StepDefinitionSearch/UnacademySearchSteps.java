@@ -174,7 +174,7 @@ public class UnacademySearchSteps {
 		test.click();
 	}
 
-	//mention your xpaths in page object model
+ 
 
 	@Then("Educator search list appear")
 	public void educator_search_list_appear() {
