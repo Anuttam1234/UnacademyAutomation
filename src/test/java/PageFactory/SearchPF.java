@@ -23,7 +23,7 @@ public class SearchPF {
 	@FindBy(xpath= "//a[contains(@href,'@sahilchhapola')]") // need change name 
 	public 
 	WebElement SearchSahil;
-	@FindBy(xpath= "//h2[contains(text(),'Sahil Chhapola')]")
+	@FindBy(xpath= "//h2[contains(@class,'EducatorHeader__Title')]")
 	public
 	WebElement EducatorProfile;
 	
@@ -32,7 +32,7 @@ public class SearchPF {
 		return EducatorProfile.isDisplayed();
 	}
 	
-	@FindBy(xpath= "//div[@class=\\\"MuiPaper-root Paper-f6r4fl-0 EducatorDedicationStats__Stats-sc-1hlwx9w-0 hpAChX bKHyGh MuiPaper-elevation1 MuiPaper-rounded\\\"]")
+	@FindBy(xpath= "//div[contains(@class,'EducatorDedicationStats__Stats')]")
 	public
 	WebElement DedicationIcon;
 	
@@ -45,19 +45,19 @@ public class SearchPF {
 	@FindBy(xpath= "//h2[contains(text(),'Dedications')]")
 	public
 	WebElement DedicationDrawyer;
-	@FindBy(xpath= "//*[@id=\\\"DrawerPaper\\\"]/div[2]/div[1]/div[1]")   //img[@alt='hats'][0]
+	@FindBy(xpath= "//img[@alt='hats'])[position()=1]")  
 	public
 	WebElement Hat1;
-	@FindBy(xpath= "//*[@id=\\\"DrawerPaper\\\"]/div[2]/div[2]/div[1]")
+	@FindBy(xpath= "//img[@alt='hats'])[position()=2]")
 	public
 	WebElement Hat2;
-	@FindBy(xpath= "//*[@id=\\\"DrawerPaper\\\"]/div[2]/div[3]/div[1]")
+	@FindBy(xpath= "//img[@alt='hats'])[position()=3]")
 	public
 	WebElement Hat3;
-	@FindBy(xpath= "//*[@id=\\\"DrawerPaper\\\"]/div[2]/div[4]/div[1]")
+	@FindBy(xpath= "//img[@alt='hats'])[position()=4]")
 	public
 	WebElement Hat4;
-	@FindBy(xpath= "//*[@id=\\\"DrawerPaper\\\"]/div[2]/div[5]/div[1]")
+	@FindBy(xpath= "//img[@alt='hats'])[position()=5]")
 	public
 	WebElement Hat5;
 	@FindBy(xpath= "//h2[text()='Dedications']/preceding::*[1]")

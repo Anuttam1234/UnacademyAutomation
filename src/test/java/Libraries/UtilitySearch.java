@@ -18,7 +18,7 @@ public class UtilitySearch {
 			driver.manage().window().maximize();
 			driver.get(baseUrl);
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		return driver;
+			return driver;
 		}
 		
 		

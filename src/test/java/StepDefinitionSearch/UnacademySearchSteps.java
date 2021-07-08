@@ -78,6 +78,10 @@ public class UnacademySearchSteps {
 //		System.out.println(test.isDisplayed());
 //		test.sendKeys(searchItem);
 		
+		
+		//Classes -> CamelCase, variables -> small, package-> small, constants -> ALL_CAPITAL 
+		
+		
 		search.searchInput(searchItem);
 		
 		System.out.println("Search value inserted");
@@ -99,7 +103,7 @@ public class UnacademySearchSteps {
 	@Then("user on the educator profile details page")
 	public void user_on_the_educator_profile_details_page() {
 	    System.out.println(driver.getTitle());
-	    System.out.println("Educator profile page: "+driver.findElement(By.xpath("//h2[contains(text(),'Sahil Chhapola')]")).isDisplayed());
+	    System.out.println("Educator profile page: "+driver.findElement(By.xpath("//h2[contains(@class,'EducatorHeader__Title')]")).isDisplayed());
 	}
 
 	@Then("user clicks on dedication icon")
@@ -115,15 +119,15 @@ public class UnacademySearchSteps {
 	
 	@Then("user clicks on each hat icon")
 	public void user_clicks_on_each_hat_icon() throws InterruptedException {
-	    driver.findElement(By.xpath("//*[@id=\"DrawerPaper\"]/div[2]/div[1]/div[1]")).click();
+	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=1]")).click();
 	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("//*[@id=\"DrawerPaper\"]/div[2]/div[2]/div[1]")).click();
+	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=2]")).click();
 	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("//*[@id=\"DrawerPaper\"]/div[2]/div[3]/div[1]")).click();
+	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=3]")).click();
 	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("//*[@id=\"DrawerPaper\"]/div[2]/div[4]/div[1]")).click();
+	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=4]")).click();
 	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("//*[@id=\"DrawerPaper\"]/div[2]/div[5]/div[1]")).click();
+	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=5]")).click();
 	    Thread.sleep(2000);
 	}
 
