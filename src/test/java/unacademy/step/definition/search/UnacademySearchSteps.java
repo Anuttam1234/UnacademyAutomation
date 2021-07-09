@@ -273,10 +273,10 @@ public class UnacademySearchSteps {
 	}
 
 	@Then("user clicks on share button")
-	public void user_clicks_on_share_button() {
+	public void user_clicks_on_share_button() throws InterruptedException {
 //		driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/button[2]")).click();
 		search.shareButtonClicked();
-	
+		Thread.sleep(2000);
 	}
 
 	@Then("user copies the share link")

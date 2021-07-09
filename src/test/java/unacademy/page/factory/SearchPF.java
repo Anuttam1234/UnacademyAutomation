@@ -171,7 +171,7 @@ public class SearchPF {
 		
 	}
 	
-	@FindBy(xpath= "//*[@id=\\\"searchTab\\\"]/div[2]/div/div/a[2]")
+	@FindBy(xpath= "//p[contains(@class,'Popularitem__P')][position()=1]")
 	public
 	WebElement trendingSearchItem;
 	public void trendingSearchItemClicked()
@@ -192,7 +192,7 @@ public class SearchPF {
 	
 	
 	
-	@FindBy(xpath= "//div[@id=\\\"searchTab\\\"]/div[contains(@class,'MuiInputBase-root')]")
+	@FindBy(xpath= "//div[contains(@class,'SearchTab__SearchTextField')]")
 	public
 	WebElement clickSearchTextBox;
 	public void searchBoxForCourseClicked()
@@ -206,7 +206,7 @@ public class SearchPF {
 	{  
 		inputCourse.sendKeys(courseName);
 	}
-	@FindBy(xpath= "//*[@id=\\\"searchTab\\\"]/div[2]/div/div/a[1]/div/div")
+	@FindBy(xpath= "//div[contains(@class,'Popularitem__Item')]")
 	public
 	WebElement clickSearchItem;
 	
