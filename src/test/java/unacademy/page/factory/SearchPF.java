@@ -67,9 +67,6 @@ public class SearchPF {
 	public
 	WebElement hat1;
 	
-//	public void () {
-//		hat1.click();
-//	}
 	
 	@FindBy(xpath= "//h6[contains(text(),'Green Hat')]")  
 	public
@@ -94,6 +91,8 @@ public class SearchPF {
 		hat2.click();
 		return blueHatappear.isDisplayed();
 	}
+	
+	
 	@FindBy(xpath= "(//img[@alt='hats'])[position()=3]")
 	public
 	WebElement hat3;
@@ -105,6 +104,7 @@ public class SearchPF {
 		hat3.click();
 		return purpleHatappear.isDisplayed();
 	}
+	
 	@FindBy(xpath= "(//img[@alt='hats'])[position()=4]")
 	public
 	WebElement hat4;
@@ -116,6 +116,8 @@ public class SearchPF {
 		hat4.click();
 		return brownHatappear.isDisplayed();
 	}
+	
+	
 	@FindBy(xpath= "(//img[@alt='hats'])[position()=5]")
 	public
 	WebElement hat5;
@@ -127,6 +129,8 @@ public class SearchPF {
 		hat5.click();
 		return redHatappear.isDisplayed();
 	}
+	
+	
 	@FindBy(xpath= "//h2[text()='Dedications']/preceding::*[1]")
 	public
 	WebElement dedicationCrossIcon;

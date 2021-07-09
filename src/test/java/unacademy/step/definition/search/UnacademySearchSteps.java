@@ -38,19 +38,18 @@ public class UnacademySearchSteps {
 		
 		String baseUrl = properties.getProperty("baseUrl");
 		String browser = properties.getProperty("browser");
+		String chromedriver = properties.getProperty("chromedriver");
 		
-		
-		driver = UtilitySearch.launchApplication(browser, baseUrl); 
+		driver = UtilitySearch.launchApplication(browser, baseUrl,chromedriver); 
 		search = new SearchPF(driver);
 	}
 	
-	//path and url in config.properties in src/test/resources
 	
 	@After
 	public void driverClose() {
 		driver.quit();
 	}
-//	
+
 	
 	@Given("User on unacademy home page")
 	public void user_on_unacademy_home_page() {
@@ -98,7 +97,7 @@ public class UnacademySearchSteps {
 		
 		search.searchEducatorName();
 		
-		Thread.sleep(5000); //use explicit wait
+		Thread.sleep(5000); //use explicit wait  (dynamic waits)
 		
 	}
 
@@ -164,6 +163,7 @@ public class UnacademySearchSteps {
 	@Then("user clicks on profile highlighter")
 	public void user_clicks_on_profile_highlighter() {
 //	    driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div/div/section/h6")).click();
+		
 		System.out.println("Profile Highlighter going to click");
 		search.profileHighlighterClicked();
 		System.out.println("Profile Highlighter clicked");
