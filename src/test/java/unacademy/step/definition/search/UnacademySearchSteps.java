@@ -187,20 +187,22 @@ public class UnacademySearchSteps {
 
 	@When("user click on search textbox")
 	public void user_click_on_search_textbox() throws InterruptedException {
-		driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
-	    Thread.sleep(4000);
+//		driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
+	    search.searchTextBoxClicked();
+		Thread.sleep(4000);
 	}
 
 	@Then("Trending search list appears")
 	public void trending_search_list_appears() {
-	   Assert.assertEquals(true, search.isTrendingPageAppeared());
+	   Assert.assertEquals(true, search.isTrendingListAppeared());
 	}
 
 	@Then("user clicks an item from Trending search list")
 	public void user_clicks_an_item_from_Trending_search_list() {
-		WebElement test = driver.findElement(By.xpath("//*[@id=\"searchTab\"]/div[2]/div/div/a[2]")); //do it by index  
-		System.out.println("Sahil is clickable from Trending search list"+test.isDisplayed());
-		test.click();
+//		WebElement test = driver.findElement(By.xpath("//*[@id=\"searchTab\"]/div[2]/div/div/a[2]")); //do it by index  
+//		System.out.println("Sahil is clickable from Trending search list"+test.isDisplayed());
+//		test.click();
+		search.trendingSearchItemClicked();
 	}
 
  
@@ -209,9 +211,9 @@ public class UnacademySearchSteps {
 	public void educator_search_list_appear() {
 		System.out.println(driver.getTitle());
 	    
-		System.out.println("Educator Search list "+driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div[1]/div[2]/h4[1]")).isDisplayed()); 
-		
-	  
+//		System.out.println("Educator Search list "+driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div[1]/div[2]/h4[1]")).isDisplayed()); 
+	
+		Assert.assertEquals(true, search.isEducatorSearchListDisplayed());
 		System.out.println("Educator search list appear!");
 	}
 
@@ -219,19 +221,24 @@ public class UnacademySearchSteps {
 	@When("user searches course name as {string}")
 	public void user_searches_course_name_as(String courseName) throws InterruptedException {
 		
-		driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
+//		driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
+		
+		search.searchBoxForCourseClicked();
 	    Thread.sleep(4000);
 
-		WebElement Coursename = driver.findElement(By.xpath("//input[@id='searchInput']"));                                                              
-		System.out.println(Coursename.isDisplayed());
-		Coursename.sendKeys(courseName);
+//		WebElement Coursename = driver.findElement(By.xpath("//input[@id='searchInput']"));                                                              
+//		System.out.println(Coursename.isDisplayed());
+//		Coursename.sendKeys(courseName);
+	    
+	    search.searchBoxClicked(courseName);
 		
 		System.out.println("Search value inserted");
 		
 		Thread.sleep(2000);
 		
 		
-		driver.findElement(By.xpath("//*[@id=\"searchTab\"]/div[2]/div/div/a[1]/div/div")).click();
+//		driver.findElement(By.xpath("//*[@id=\"searchTab\"]/div[2]/div/div/a[1]/div/div")).click();
+		search.searchItemClicked();
 		
 		Thread.sleep(5000);
 	}
@@ -239,7 +246,9 @@ public class UnacademySearchSteps {
 	@Then("course search list appear")
 	public void course_search_list_appear() {
 		
-		System.out.println("Courses search list: "+driver.findElement(By.xpath("//h2[contains(text(),'Courses & test series')]")).isDisplayed());
+//		System.out.println("Courses search list: "+driver.findElement(By.xpath("//h2[contains(text(),'Courses & test series')]")).isDisplayed());
+		
+		Assert.assertEquals(true, search.courseSearchListAppeared());
 	}
 
 	@Then("user clicks on specific course")
@@ -247,26 +256,37 @@ public class UnacademySearchSteps {
 		
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("window.scrollBy(45,65)");
-	    driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div[1]/div[2]/div[4]/div/div[1]/div/a/div")).click();
+//	    driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div[1]/div[2]/div[4]/div/div[1]/div/a/div")).click();
+		
+		search.isCourseClicked();
 	}
 
 	@Then("course preview page appear")
 	public void course_preview_page_appear() {
-		driver.findElement(By.xpath("//h2[text()='Login']/preceding::*[1]")).click();
+//		driver.findElement(By.xpath("//h2[text()='Login']/preceding::*[1]")).click();
+		
 
-	System.out.println("Course preview Page: "+driver.findElement(By.xpath("//h1[@class=\"H3-sc-1rp46r8-0 PlusCourseHeader__CourseTitle-sc-1lavlgt-4 joSVbX cXmHxN\"]")).isDisplayed());
+//		System.out.println("Course preview Page: "+driver.findElement(By.xpath("//h1[@class=\"H3-sc-1rp46r8-0 PlusCourseHeader__CourseTitle-sc-1lavlgt-4 joSVbX cXmHxN\"]")).isDisplayed());
+	
+		Assert.assertEquals(true, search.isCoursePreviewPageDisplayed());
+	
 	}
 
 	@Then("user clicks on share button")
 	public void user_clicks_on_share_button() {
-		driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/button[2]")).click();
+//		driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/button[2]")).click();
+		search.shareButtonClicked();
+	
 	}
 
 	@Then("user copies the share link")
 	public void user_copies_the_share_link() {
 		
-		System.out.println("Share dialogue box: "+driver.findElement(By.xpath("//h3[contains(text(),'Share via')]")).isDisplayed());
-	    driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/div/div[2]/h6[2]")).click();
+//		System.out.println("Share dialogue box: "+driver.findElement(By.xpath("//h3[contains(text(),'Share via')]")).isDisplayed());
+		Assert.assertEquals(true, search.shareDialogueBoxDisplayed());
+//	    driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/div/div[2]/h6[2]")).click();
+		
+		search.shareLinkCopied();
 	    System.out.println("Share link copied!");
 	}
 	@Then("user clicks on the social media icon")

@@ -164,10 +164,10 @@ public class SearchPF {
 	}
 	@FindBy(xpath= "//h6[contains(text(),'Trending')]")
 	public
-	WebElement trendingPageAppear;
+	WebElement trendingListAppear;
 	
-	public boolean isTrendingPageAppeared() {
-		return trendingPageAppear.isDisplayed();
+	public boolean isTrendingListAppeared() {
+		return trendingListAppear.isDisplayed();
 		
 	}
 	
@@ -185,6 +185,13 @@ public class SearchPF {
 	{  
 		return educatorSearchList.isDisplayed();
 	}
+	
+	
+	
+	
+	
+	
+	
 	@FindBy(xpath= "//div[@id=\\\"searchTab\\\"]/div[contains(@class,'MuiInputBase-root')]")
 	public
 	WebElement clickSearchTextBox;
@@ -221,7 +228,7 @@ public class SearchPF {
 	public
 	WebElement clickCourse;
 	
-	public void clickCourse() {
+	public void isCourseClicked() {
 		clickCourse.click();
 	}
 	
@@ -233,7 +240,7 @@ public class SearchPF {
 	public
 	WebElement coursePreviewPage;
 	
-	public boolean coursePreviewPage() {
+	public boolean isCoursePreviewPageDisplayed() {
 		crossLoginIcon.click();
 		return coursePreviewPage.isDisplayed();
 	}
@@ -250,8 +257,8 @@ public class SearchPF {
 	public
 	WebElement shareBox;
 	
-	public void shareDialogueBoxDisplayed() {
-		shareBox.click();
+	public boolean shareDialogueBoxDisplayed() {
+		return shareBox.isDisplayed();
 	}
 	
 	@FindBy(xpath= "//h6[contains(@class,'ShareDialog__Copy')]")
