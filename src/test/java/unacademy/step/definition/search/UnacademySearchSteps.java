@@ -10,13 +10,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
+import org.testng.Assert;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import unacademy.libraries.UtilitySearch;
 import unacademy.page.factory.SearchPF;
 
@@ -25,14 +26,20 @@ public class UnacademySearchSteps {
 	SearchPF search;
 	
 	WebDriver driver;
+	
 	@Before
 	public void setUp() throws IOException {
 		FileReader reader = new FileReader("C:\\Users\\anuttam\\eclipse-workspace\\UnacademyAutomation\\src\\test\\resources\\config\\config.properties");
 		
 		Properties properties = new Properties();
 		properties.load(reader);	
-		String baseUrl=properties.getProperty("baseUrl");
+		
+		
+		
+		String baseUrl = properties.getProperty("baseUrl");
 		String browser = properties.getProperty("browser");
+		
+		
 		driver = UtilitySearch.launchApplication(browser, baseUrl); 
 		search = new SearchPF(driver);
 	}
@@ -52,9 +59,8 @@ public class UnacademySearchSteps {
 	    
 //	    System.out.println("Home Page: "+driver.findElement(By.xpath("//h1[contains(text()[1],'Crack UPSC CSE - GS with')]")).isDisplayed());
 
-	    search.homePageDisplayed();
+	    Assert.assertEquals(true, search.homePageDisplayed());
 	    
-//	    Assert.assertEquals(6000,ac.deposit(1000));
 	}
 
 	@When("user searches educator name")
@@ -102,57 +108,81 @@ public class UnacademySearchSteps {
 	@Then("user on the educator profile details page")
 	public void user_on_the_educator_profile_details_page() {
 	    System.out.println(driver.getTitle());
-	    System.out.println("Educator profile page: "+driver.findElement(By.xpath("//h2[contains(@class,'EducatorHeader__Title')]")).isDisplayed());
+//	    System.out.println("Educator profile page: "+driver.findElement(By.xpath("//h2[contains(@class,'EducatorHeader__Title')]")).isDisplayed());
+	    Assert.assertEquals(true, search.isEducatorProfiledisplayed());
+	    
 	}
 
 	@Then("user clicks on dedication icon")
 	public void user_clicks_on_dedication_icon() {
-	    driver.findElement(By.xpath("//div[@class=\"MuiPaper-root Paper-f6r4fl-0 EducatorDedicationStats__Stats-sc-1hlwx9w-0 hpAChX bKHyGh MuiPaper-elevation1 MuiPaper-rounded\"]")).click();
+//	    driver.findElement(By.xpath("//div[@class=\"MuiPaper-root Paper-f6r4fl-0 EducatorDedicationStats__Stats-sc-1hlwx9w-0 hpAChX bKHyGh MuiPaper-elevation1 MuiPaper-rounded\"]")).click();
+	
+		search.dedicationIconClicked();
 	}
 	
 	@Then("dedication drawyer open")
 	public void dedication_drawyer_open() {
 
-		System.out.println("Dedication Drawyer: "+driver.findElement(By.xpath("//h2[contains(text(),'Dedications')]")).isDisplayed());
+//		System.out.println("Dedication Drawyer: "+driver.findElement(By.xpath("//h2[contains(text(),'Dedications')]")).isDisplayed());
+		Assert.assertEquals(true, search.isDedicationDrawyerOpen());
 	}
 	
 	@Then("user clicks on each hat icon")
 	public void user_clicks_on_each_hat_icon() throws InterruptedException {
-	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=1]")).click();
+//	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=1]")).click();
+//		search.hat1.click();
+		Assert.assertEquals(true, search.isGreenHatClicked());
 	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=2]")).click();
+//	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=2]")).click();
+//	    search.hat2.click();
+	    Assert.assertEquals(true, search.isBlueHatClicked());
 	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=3]")).click();
+//	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=3]")).click();
+//	    search.hat3.click();
+	    Assert.assertEquals(true, search.isPurpleHatClicked());
 	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=4]")).click();
+//	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=4]")).click();
+//	    search.hat4.click();
+	    Assert.assertEquals(true, search.isBrownHatClicked());
 	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=5]")).click();
+//	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=5]")).click();
+//	    search.hat5.click();
+	    Assert.assertEquals(true, search.isRedHatClicked());
 	    Thread.sleep(2000);
 	}
 
+	
 	@Then("user clicks on cross icon")
 	public void user_clicks_on_cross_icon() {
 
-				driver.findElement(By.xpath("//h2[text()='Dedications']/preceding::*[1]")).click();
+//				driver.findElement(By.xpath("//h2[text()='Dedications']/preceding::*[1]")).click();
+		
+		search.dedicationCrossIconClicked();
 		
 	}
-
+ 
 	@Then("user clicks on profile highlighter")
 	public void user_clicks_on_profile_highlighter() {
-	    driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div/div/section/h6")).click();
+//	    driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div/div/section/h6")).click();
+		System.out.println("Profile Highlighter going to click");
+		search.profileHighlighterClicked();
+		System.out.println("Profile Highlighter clicked");
 	}
 
 	@Then("profile highlighter drwayer open")
 	public void profile_highlighter_drwayer_open() {
 		
-		System.out.println("Profil highlighter Drawyer: "+driver.findElement(By.xpath("//h2[contains(text(),'Bank Exams Educators')]")).isDisplayed());
+//		System.out.println("Profil highlighter Drawyer: "+driver.findElement(By.xpath("//h2[contains(text(),'Bank Exams Educators')]")).isDisplayed());
+		
+		Assert.assertEquals(true,search.profileDrawyerOpened());
 		
 	}
 	
 	@Then("user clicks on cross icon again")
 	public void user_clicks_on_cross_icon_again() {
 		//h2[text()='Dedications']/preceding::*[1]
-				driver.findElement(By.xpath("//h2[text()='Bank Exams Educators']/preceding::*[1]")).click();
+//				driver.findElement(By.xpath("//h2[text()='Bank Exams Educators']/preceding::*[1]")).click();
+		search.isProfileCrossIconClicked();
 	}
 
 	@When("user click on search textbox")
@@ -163,7 +193,7 @@ public class UnacademySearchSteps {
 
 	@Then("Trending search list appears")
 	public void trending_search_list_appears() {
-	   System.out.println("Trending search list appeared!");
+	   Assert.assertEquals(true, search.isTrendingPageAppeared());
 	}
 
 	@Then("user clicks an item from Trending search list")

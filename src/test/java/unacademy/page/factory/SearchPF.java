@@ -14,15 +14,26 @@ public class SearchPF {
 	@FindBy(xpath= "//h1[contains(text()[1],'Crack UPSC CSE - GS with')]")
 	public
 	WebElement homePage;
+	
+	
 	@FindBy(xpath= "//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")
 	public
 	WebElement searchTextBox;
+	
+	
 	@FindBy(xpath= "//input[@id='searchInput']")
 	public
 	WebElement searchInput;
+	
+	
 	@FindBy(xpath= "//a[contains(@href,'@sahilchhapola')]") // need change name 
 	public 
 	WebElement searchEducator;
+	
+	
+	
+	
+	
 	@FindBy(xpath= "//h2[contains(@class,'EducatorHeader__Title')]")
 	public
 	WebElement educatorProfile;
@@ -31,6 +42,7 @@ public class SearchPF {
 	{  
 		return educatorProfile.isDisplayed();
 	}
+	
 	
 	@FindBy(xpath= "//div[contains(@class,'EducatorDedicationStats__Stats')]")
 	public
@@ -45,45 +57,75 @@ public class SearchPF {
 	@FindBy(xpath= "//h2[contains(text(),'Dedications')]")
 	public
 	WebElement dedicationDrawyer;
-	public void isDedicationDrawyerOpen()
+	public boolean isDedicationDrawyerOpen()
 	{  
-		dedicationIcon.click();
-	}
-	@FindBy(xpath= "//img[@alt='hats'])[position()=1]")  
-	public
-	WebElement hat1;
-	public void hat1Clicked()
-	{  
-		hat1.click();
+		return dedicationIcon.isDisplayed();
 	}
 	
-	@FindBy(xpath= "//img[@alt='hats'])[position()=2]")
+	
+	@FindBy(xpath= "(//img[@alt='hats'])[position()=1]")  
+	public
+	WebElement hat1;
+	
+//	public void () {
+//		hat1.click();
+//	}
+	
+	@FindBy(xpath= "//h6[contains(text(),'Green Hat')]")  
+	public
+	WebElement greenHatappear;
+	
+	public boolean isGreenHatClicked()
+	{  
+		hat1.click();
+		return greenHatappear.isDisplayed();
+	}
+	
+	
+	
+	@FindBy(xpath= "(//img[@alt='hats'])[position()=2]")
 	public
 	WebElement hat2;
-	public void hat2Clicked()
+	@FindBy(xpath= "//h6[contains(text(),'Blue Hat')]")  
+	public
+	WebElement blueHatappear;
+	public boolean isBlueHatClicked()
 	{  
 		hat2.click();
+		return blueHatappear.isDisplayed();
 	}
-	@FindBy(xpath= "//img[@alt='hats'])[position()=3]")
+	@FindBy(xpath= "(//img[@alt='hats'])[position()=3]")
 	public
 	WebElement hat3;
-	public void hat3Clicked()
+	@FindBy(xpath= "//h6[contains(text(),'Purple Hat')]")  
+	public
+	WebElement purpleHatappear;
+	public boolean isPurpleHatClicked()
 	{  
 		hat3.click();
+		return purpleHatappear.isDisplayed();
 	}
-	@FindBy(xpath= "//img[@alt='hats'])[position()=4]")
+	@FindBy(xpath= "(//img[@alt='hats'])[position()=4]")
 	public
 	WebElement hat4;
-	public void hat4Clicked()
+	@FindBy(xpath= "//h6[contains(text(),'Brown Hat')]")  
+	public
+	WebElement brownHatappear;
+	public boolean isBrownHatClicked()
 	{  
 		hat4.click();
+		return brownHatappear.isDisplayed();
 	}
-	@FindBy(xpath= "//img[@alt='hats'])[position()=5]")
+	@FindBy(xpath= "(//img[@alt='hats'])[position()=5]")
 	public
 	WebElement hat5;
-	public void hat5Clicked()
+	@FindBy(xpath= "//h6[contains(text(),'Red Hat')]")  
+	public
+	WebElement redHatappear;
+	public boolean isRedHatClicked()
 	{  
 		hat5.click();
+		return redHatappear.isDisplayed();
 	}
 	@FindBy(xpath= "//h2[text()='Dedications']/preceding::*[1]")
 	public
@@ -92,7 +134,7 @@ public class SearchPF {
 	{  
 		dedicationCrossIcon.click();
 	}
-	@FindBy(xpath= "//*[@id=\\\"__next\\\"]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div/div/section/h6")
+	@FindBy(xpath= "//h6[contains(text(),'Teaches')]")
 	public
 	WebElement profileHighlighter;
 	public void profileHighlighterClicked()
@@ -109,7 +151,7 @@ public class SearchPF {
 	@FindBy(xpath= "//h2[text()='Bank Exams Educators']/preceding::*[1]")
 	public
 	WebElement profileCrossIcon;
-	public void profileCrossIconClicked()
+	public void isProfileCrossIconClicked()
 	{  
 		profileCrossIcon.click();
 	}
@@ -120,9 +162,14 @@ public class SearchPF {
 	{  
 		searchFromTrending.click();
 	}
-//	@FindBy(xpath= "//h1[contains(text()[1],'Crack UPSC CSE - GS with')]")
-//	public
-//	WebElement HomePage;
+	@FindBy(xpath= "//h6[contains(text(),'Trending')]")
+	public
+	WebElement trendingPageAppear;
+	
+	public boolean isTrendingPageAppeared() {
+		return trendingPageAppear.isDisplayed();
+		
+	}
 	
 	@FindBy(xpath= "//*[@id=\\\"searchTab\\\"]/div[2]/div/div/a[2]")
 	public
@@ -191,7 +238,7 @@ public class SearchPF {
 		return coursePreviewPage.isDisplayed();
 	}
 	
-	@FindBy(xpath= "//*[@id=\\\"__next\\\"]/div[1]/div/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/button[2]")
+	@FindBy(xpath= "//button[contains(@class,'PlusCourseHeader__ShareButton')]")
 	public
 	WebElement shareButton;
 	
@@ -207,7 +254,7 @@ public class SearchPF {
 		shareBox.click();
 	}
 	
-	@FindBy(xpath= "/html/body/div[3]/div[3]/div/div/div[2]/h6[2]")
+	@FindBy(xpath= "//h6[contains(@class,'ShareDialog__Copy')]")
 	public
 	WebElement copyShareLink;
 	
@@ -236,9 +283,9 @@ public class SearchPF {
 		
 	}
 	
-	public void homePageDisplayed()
+	public boolean homePageDisplayed()
 	{  
-		System.out.println(homePage.isDisplayed()); //return it to the step definition file and there I need to write Assert functions.
+		return homePage.isDisplayed(); //return it to the step definition file and there I need to write Assert functions.
 	}
 	public void searchTextBoxClicked()
 	{  
