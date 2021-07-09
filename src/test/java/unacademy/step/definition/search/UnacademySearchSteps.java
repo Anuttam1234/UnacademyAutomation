@@ -291,8 +291,11 @@ public class UnacademySearchSteps {
 	}
 	@Then("user clicks on the social media icon")
 	public void user_clicks_on_the_social_media_icon() {
-	    driver.findElement(By.xpath("//h3[text()='Share via']/following::*[2]")).click();
-	    driver.findElement(By.xpath("//h3[text()='Share via']/following::*[4]")).click();
+//	    driver.findElement(By.xpath("//h3[text()='Share via']/following::*[2]")).click();
+//	    driver.findElement(By.xpath("//h3[text()='Share via']/following::*[4]")).click();
+		search.clickFaceBookIcon();
+		search.clickTwitterIcon();
+		
 	}
 
 }
