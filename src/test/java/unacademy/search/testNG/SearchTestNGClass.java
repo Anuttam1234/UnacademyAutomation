@@ -6,10 +6,22 @@ import unacademy.libraries.UtilitySearch;
 import unacademy.page.factory.SearchPF;
 
 import org.testng.annotations.BeforeMethod;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import javax.swing.filechooser.FileNameExtensionFilter;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -21,6 +33,12 @@ public class SearchTestNGClass {
 	
 	WebDriver driver;
 	
+	File file;
+	FileInputStream inputStream;
+	FileOutputStream out;
+	Workbook wBook;
+	Sheet sheet;
+	
 	
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
@@ -29,7 +47,6 @@ public class SearchTestNGClass {
 		
 		Properties properties = new Properties();
 		properties.load(reader);	
-		
 		
 		
 		String baseUrl = properties.getProperty("baseUrl");
@@ -43,6 +60,7 @@ public class SearchTestNGClass {
 
 	@AfterMethod
 	public void afterMethod() {
+		 // nullify the FileReader
 		driver.quit();
 	}
 	
@@ -52,12 +70,28 @@ public class SearchTestNGClass {
 	
 
 	@Test(priority = 1)
-	public void verifyExplorationOfEducatorProfile() throws InterruptedException {
+	public void verifyExplorationOfEducatorProfile() throws InterruptedException, IOException {
 		System.out.println(driver.getTitle());
 		Assert.assertEquals(true, search.homePageDisplayed());
 		search.searchTextBoxClicked(); //change method name
 		Thread.sleep(4000);	
-		String searchItem = "Sahil";
+		
+		String fileName = "testdataSearch.xlsx";
+		file = new File("C:\\Users\\anuttam\\eclipse-workspace\\UnacademyAutomation\\Testdata\\testdataSearch.xlsx"); //Store in config.properties
+		inputStream = new FileInputStream(file);
+		out = null;
+		wBook = null;
+		
+		String fileExtn = fileName.substring(fileName.indexOf("."));
+		System.out.println(fileExtn);
+		if(fileExtn.equals(".xlsx")) {
+			wBook = new XSSFWorkbook(inputStream);
+		}
+		
+		sheet = wBook.getSheet("Sheet1");
+		Row row = sheet.getRow(1);
+
+		String searchItem = row.getCell(0).getStringCellValue();
 		search.searchInput(searchItem);
 		
 		System.out.println("Search value inserted");
@@ -108,7 +142,13 @@ public class SearchTestNGClass {
 	public void verifyExplorationOfCourses() throws InterruptedException {
 		search.searchBoxForCourseClicked();
 	    Thread.sleep(4000);
-	    String courseName = "UPSC";
+	    
+	    
+	    
+	    sheet = wBook.getSheet("Sheet1");
+		Row row = sheet.getRow(1);
+
+	    String courseName = row.getCell(1).getStringCellValue();
 	    search.searchBoxClicked(courseName);
 		
 		System.out.println("Search value inserted");

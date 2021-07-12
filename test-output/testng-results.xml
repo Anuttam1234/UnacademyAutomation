@@ -2,48 +2,48 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-12T10:55:19 IST" name="Default suite" finished-at="2021-07-12T10:56:31 IST" duration-ms="72507">
+  <suite started-at="2021-07-12T15:38:09 IST" name="Suite" finished-at="2021-07-12T15:39:22 IST" duration-ms="72809">
     <groups>
     </groups>
-    <test started-at="2021-07-12T10:55:19 IST" name="Default test" finished-at="2021-07-12T10:56:31 IST" duration-ms="72507">
+    <test started-at="2021-07-12T15:38:09 IST" name="Test" finished-at="2021-07-12T15:39:22 IST" duration-ms="72809">
       <class name="unacademy.search.testNG.SearchTestNGClass">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@3eb7fc54]" started-at="2021-07-12T10:55:19 IST" name="beforeMethod" finished-at="2021-07-12T10:55:27 IST" duration-ms="8435" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@7722c3c3]" started-at="2021-07-12T15:38:09 IST" name="beforeMethod" finished-at="2021-07-12T15:38:18 IST" duration-ms="8473" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyExplorationOfEducatorProfile()[pri:1, instance:unacademy.search.testNG.SearchTestNGClass@3eb7fc54]" started-at="2021-07-12T10:55:27 IST" name="verifyExplorationOfEducatorProfile" finished-at="2021-07-12T10:55:51 IST" duration-ms="23974" status="PASS">
+        <test-method signature="verifyExplorationOfEducatorProfile()[pri:1, instance:unacademy.search.testNG.SearchTestNGClass@7722c3c3]" started-at="2021-07-12T15:38:18 IST" name="verifyExplorationOfEducatorProfile" finished-at="2021-07-12T15:38:42 IST" duration-ms="24375" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyExplorationOfEducatorProfile -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@3eb7fc54]" started-at="2021-07-12T10:55:51 IST" name="afterMethod" finished-at="2021-07-12T10:55:52 IST" duration-ms="785" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@7722c3c3]" started-at="2021-07-12T15:38:42 IST" name="afterMethod" finished-at="2021-07-12T15:38:43 IST" duration-ms="776" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@3eb7fc54]" started-at="2021-07-12T10:55:52 IST" name="beforeMethod" finished-at="2021-07-12T10:55:59 IST" duration-ms="7248" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@7722c3c3]" started-at="2021-07-12T15:38:43 IST" name="beforeMethod" finished-at="2021-07-12T15:38:50 IST" duration-ms="6948" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifySearchingFromTrendingSearchList()[pri:2, instance:unacademy.search.testNG.SearchTestNGClass@3eb7fc54]" started-at="2021-07-12T10:55:59 IST" name="verifySearchingFromTrendingSearchList" finished-at="2021-07-12T10:56:05 IST" duration-ms="5521" status="PASS">
+        <test-method signature="verifySearchingFromTrendingSearchList()[pri:2, instance:unacademy.search.testNG.SearchTestNGClass@7722c3c3]" started-at="2021-07-12T15:38:50 IST" name="verifySearchingFromTrendingSearchList" finished-at="2021-07-12T15:38:56 IST" duration-ms="6035" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySearchingFromTrendingSearchList -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@3eb7fc54]" started-at="2021-07-12T10:56:05 IST" name="afterMethod" finished-at="2021-07-12T10:56:06 IST" duration-ms="781" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@7722c3c3]" started-at="2021-07-12T15:38:56 IST" name="afterMethod" finished-at="2021-07-12T15:38:57 IST" duration-ms="755" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@3eb7fc54]" started-at="2021-07-12T10:56:06 IST" name="beforeMethod" finished-at="2021-07-12T10:56:13 IST" duration-ms="7512" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@7722c3c3]" started-at="2021-07-12T15:38:57 IST" name="beforeMethod" finished-at="2021-07-12T15:39:04 IST" duration-ms="7396" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyExplorationOfCourses()[pri:3, instance:unacademy.search.testNG.SearchTestNGClass@3eb7fc54]" started-at="2021-07-12T10:56:13 IST" name="verifyExplorationOfCourses" finished-at="2021-07-12T10:56:30 IST" duration-ms="17439" status="PASS">
+        <test-method signature="verifyExplorationOfCourses()[pri:3, instance:unacademy.search.testNG.SearchTestNGClass@7722c3c3]" started-at="2021-07-12T15:39:04 IST" name="verifyExplorationOfCourses" finished-at="2021-07-12T15:39:21 IST" duration-ms="17210" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyExplorationOfCourses -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@3eb7fc54]" started-at="2021-07-12T10:56:30 IST" name="afterMethod" finished-at="2021-07-12T10:56:31 IST" duration-ms="751" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@7722c3c3]" started-at="2021-07-12T15:39:21 IST" name="afterMethod" finished-at="2021-07-12T15:39:22 IST" duration-ms="776" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- unacademy.search.testNG.SearchTestNGClass -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

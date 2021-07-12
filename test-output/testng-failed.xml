@@ -6,26 +6,9 @@
       <class name="unacademy.search.testNG.SearchTestNGClass">
         <methods>
           <include name="beforeMethod"/>
-          <include name="verifySearchingCourses"/>
-          <include name="verifyTrendingSearchItemClicked"/>
+          <include name="verifyExplorationOfEducatorProfile"/>
           <include name="afterMethod"/>
-          <include name="verifyDedicationDrawyerOpened"/>
-          <include name="verifyShareButtonClickable"/>
-          <include name="verifyDedicationClickable"/>
-          <include name="verifyProfileHighlighterDrawyerOpened"/>
-          <include name="verifyEducatorProfilePage"/>
-          <include name="verifySpecificCourseClickable"/>
-          <include name="verifySearchBoxClicked"/>
-          <include name="verifyProfileHighlighterCrossIconClickable"/>
-          <include name="verifyCoursePreviewPageDisplayed"/>
-          <include name="verifySocialMediaIconsClickable"/>
-          <include name="verifyDedicationCrossIconClickable"/>
-          <include name="verifyHatIconClickable"/>
-          <include name="verifyTrendingSearchListAppeared"/>
-          <include name="verifyProfileHighlighterClickable"/>
-          <include name="verifyCourseListAppeared"/>
-          <include name="verifyEducatorListAppeared"/>
-          <include name="verifyShareLinkCopied"/>
+          <include name="verifyExplorationOfCourses"/>
         </methods>
       </class> <!-- unacademy.search.testNG.SearchTestNGClass -->
     </classes>

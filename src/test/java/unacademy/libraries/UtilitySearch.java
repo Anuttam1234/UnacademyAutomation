@@ -9,7 +9,6 @@ public class UtilitySearch {
 	public static WebDriver launchApplication(String browser,String baseUrl,String chromedriver) {
 		WebDriver driver; 
 		
-
 		//Everything should call here from properties file, pass the properties object.
 		
 		if(browser.equals("Chrome")) {
@@ -25,8 +24,5 @@ public class UtilitySearch {
 		return null;
 
 	}
-	
-	
-	
 
 }
