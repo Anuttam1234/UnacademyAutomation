@@ -36,13 +36,14 @@ public class SearchTestNGClass {
 	FileOutputStream out;
 	Workbook wBook;
 	Sheet sheet;
-	String dataExcelFile;
+	String dataExcelFilePath;
 	String excelFileName;
+	FileReader reader;
 	
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
 		
-		FileReader reader = new FileReader("C:\\Users\\anuttam\\eclipse-workspace\\UnacademyAutomation\\src\\test\\resources\\config\\config.properties");
+		reader = new FileReader("C:\\Users\\anuttam\\eclipse-workspace\\UnacademyAutomation\\src\\test\\resources\\config\\config.properties");
 		
 		Properties properties = new Properties();
 		properties.load(reader);	
@@ -51,7 +52,7 @@ public class SearchTestNGClass {
 		String baseUrl = properties.getProperty("baseUrl");
 		String browser = properties.getProperty("browser");
 		String chromedriver = properties.getProperty("chromedriver");
-		dataExcelFile = properties.getProperty("dataExcelFile");
+		dataExcelFilePath = properties.getProperty("dataExcelFile");
 		excelFileName = properties.getProperty("excelFileName");
 		driver = UtilitySearch.launchApplication(browser, baseUrl,chromedriver); 
 		search = new SearchPF(driver);
@@ -60,7 +61,7 @@ public class SearchTestNGClass {
 
 	@AfterMethod
 	public void afterMethod() {
-		 // nullify the FileReader
+		 reader = null;
 		driver.quit();
 	}
 	
@@ -70,9 +71,9 @@ public class SearchTestNGClass {
 		
 		String[][] data = null; 
 		String fileName = excelFileName;
-		file = new File(dataExcelFile);
+		file = new File(dataExcelFilePath);
 		System.out.println("Data Excel File Name : "+excelFileName);
-		System.out.println("Data Excel File Path : "+dataExcelFile);
+		System.out.println("Data Excel File Path : "+dataExcelFilePath);
 		inputStream = new FileInputStream(file);
 		out = null;
 		wBook = null;
@@ -101,68 +102,12 @@ public class SearchTestNGClass {
     }
 	
 	
-
-	@Test(priority = 1, dataProvider = "searchitem")
-	public void verifyExplorationOfEducatorProfile(String educator, String coursename) throws InterruptedException {
-		//Title of HomePage
-		System.out.println(driver.getTitle());
-		
-		//Checking driver is on home Page or not
-		Assert.assertEquals(true, search.homePageDisplayed());
-		
-		search.searchTextBoxClicked(); //Clicking the search text box
-	
-		//Passing the search item value
-		String searchItem = educator;
-		
-		System.out.println("Line 113 "+searchItem);
-		search.searchInput(searchItem);
-		
-		System.out.println("Educator Search value inserted");
-		
-
-		//Clicking the Educator name from suggestion list
-//		search.searchEducatorName();
-		
-		//Checking the educator profile is displayed or not
-		System.out.println(driver.getTitle());
-	    Assert.assertEquals(true, search.isEducatorProfiledisplayed());
-	    //clicking dedication icon
-	    search.dedicationIconClicked();
-	    Assert.assertEquals(true, search.isDedicationDrawyerOpen());
-	    
-	    //Clicking each hat from dedication drawer
-		Assert.assertEquals(true, search.isGreenHatClicked());
-	
-	    Assert.assertEquals(true, search.isBlueHatClicked());
-	 
-	    Assert.assertEquals(true, search.isPurpleHatClicked());
-	 
-	    Assert.assertEquals(true, search.isBrownHatClicked());
-
-	    Assert.assertEquals(true, search.isRedHatClicked());
-
-	    //Clicking cross icon to close the drawer
-	    search.dedicationCrossIconClicked();
-	    
-		System.out.println("Profile Highlighter going to click");
-		
-		//Clicking on profile highlighter link to open highlighter drawer
-		search.profileHighlighterClicked();
-		System.out.println("Profile Highlighter clicked");
-		Assert.assertEquals(true,search.profileDrawyerOpened());
-		
-		//Clicking cross icon to close the drawer
-		search.isProfileCrossIconClicked();
-  }
-
-	
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void verifySearchingFromTrendingSearchList() throws InterruptedException {
 		
 		//Clicking the search textbox 
 		search.searchTextBoxClicked();
-		Thread.sleep(4000);
+		UtilitySearch.waitMethod();
 		//Checking the Trending Search List appeared or not
 		Assert.assertEquals(true, search.isTrendingListAppeared());
 		
@@ -174,12 +119,67 @@ public class SearchTestNGClass {
 	  
   }
 	
+
+	@Test(priority = 2, dataProvider = "searchitem")
+	public void verifyExplorationOfEducatorProfile(String educator, String coursename) throws InterruptedException {
+		//Title of HomePage
+		System.out.println(driver.getTitle());
+		
+		//Checking driver is on home Page or not
+		Assert.assertEquals(true, search.homePageDisplayed());
+		
+		search.searchTextBoxClicked(); //Clicking the search text box
+		UtilitySearch.waitMethod();
+		//Passing the search item value
+		String searchItem = educator;
+		
+		System.out.println("Line 113 "+searchItem);
+		search.searchInput(searchItem);
+		UtilitySearch.waitMethod();
+		System.out.println("Educator Search value inserted");
+		
+		//Checking the educator profile is displayed or not
+		System.out.println(driver.getTitle());
+	    Assert.assertEquals(true, search.isEducatorProfiledisplayed());
+	    //clicking dedication icon
+	    search.dedicationIconClicked();
+	    UtilitySearch.waitMethod();
+	    Assert.assertEquals(true, search.isDedicationDrawyerOpen());
+	    
+	    //Clicking each hat from dedication drawer
+		Assert.assertEquals(true, search.isGreenHatClicked());
+		UtilitySearch.waitMethod();
+	    Assert.assertEquals(true, search.isBlueHatClicked());
+	    UtilitySearch.waitMethod();
+	    Assert.assertEquals(true, search.isPurpleHatClicked());
+	    UtilitySearch.waitMethod();
+	    Assert.assertEquals(true, search.isBrownHatClicked());
+	    UtilitySearch.waitMethod();
+	    Assert.assertEquals(true, search.isRedHatClicked());
+	    UtilitySearch.waitMethod();
+	    //Clicking cross icon to close the drawer
+	    search.dedicationCrossIconClicked();
+	    
+		System.out.println("Profile Highlighter going to click");
+		
+		//Clicking on profile highlighter link to open highlighter drawer
+		search.profileHighlighterClicked();
+		System.out.println("Profile Highlighter clicked");
+		Assert.assertEquals(true,search.profileDrawyerOpened());
+		UtilitySearch.waitMethod();
+		//Clicking cross icon to close the drawer
+		search.isProfileCrossIconClicked();
+  }
+
+	
+	
+	
 	
 	@Test(priority = 3, dataProvider = "searchitem")
 	public void verifyExplorationOfCourses(String educator, String coursename) throws InterruptedException {
 		//Clicking the search text box
 		search.searchBoxForCourseClicked();
-	    Thread.sleep(4000);
+		UtilitySearch.waitMethod();
 	    
 	    //Passing the value to search
 	    String courseName = coursename;
@@ -187,11 +187,11 @@ public class SearchTestNGClass {
 		
 		System.out.println("Course search value inserted");
 		
-		Thread.sleep(2000);
+		UtilitySearch.waitMethod();
 		//Search item click from suggestion list
 		search.searchItemClicked();
 		
-		Thread.sleep(5000);
+		UtilitySearch.waitMethod();
 		//Checking the course list appeared or not
 		Assert.assertEquals(true, search.courseSearchListAppeared());
 		
@@ -205,7 +205,7 @@ public class SearchTestNGClass {
 		//Checcking the Course preview page Displayed or not
 		Assert.assertEquals(true, search.isCoursePreviewPageDisplayed());
 		search.shareButtonClicked();
-		Thread.sleep(2000);
+		UtilitySearch.waitMethod();
 		//Checcking the Search dialogue box Display or not
 		Assert.assertEquals(true, search.shareDialogueBoxDisplayed());
 		//Copy the share link

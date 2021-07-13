@@ -6,8 +6,8 @@
       <class name="unacademy.search.testNG.SearchTestNGClass">
         <methods>
           <include name="beforeMethod"/>
-          <include name="verifyExplorationOfEducatorProfile"/>
           <include name="afterMethod"/>
+          <include name="verifyExplorationOfCourses" invocation-numbers="0"/>
         </methods>
       </class> <!-- unacademy.search.testNG.SearchTestNGClass -->
     </classes>

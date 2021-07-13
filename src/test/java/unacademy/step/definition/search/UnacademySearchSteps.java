@@ -76,7 +76,7 @@ public class UnacademySearchSteps {
 
 //	    driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
 	    search.searchTextBoxClicked(); //change method name
-		Thread.sleep(4000);
+	    UtilitySearch.waitMethod();
 	    List<String> data = dataTable.asList();
 		String searchItem = data.get(0);
 		System.out.println(searchItem);
@@ -124,7 +124,7 @@ public class UnacademySearchSteps {
 
 //		System.out.println("Dedication Drawyer: "+driver.findElement(By.xpath("//h2[contains(text(),'Dedications')]")).isDisplayed());
 		Assert.assertEquals(true, search.isDedicationDrawyerOpen());
-		Thread.sleep(2000);
+		UtilitySearch.waitMethod();
 	}
 	
 	@Then("user clicks on each hat icon")
@@ -132,23 +132,23 @@ public class UnacademySearchSteps {
 //	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=1]")).click();
 //		search.hat1.click();
 		Assert.assertEquals(true, search.isGreenHatClicked());
-	    Thread.sleep(2000);
+		UtilitySearch.waitMethod();
 //	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=2]")).click();
 //	    search.hat2.click();
 	    Assert.assertEquals(true, search.isBlueHatClicked());
-	    Thread.sleep(2000);
+	    UtilitySearch.waitMethod();
 //	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=3]")).click();
 //	    search.hat3.click();
 	    Assert.assertEquals(true, search.isPurpleHatClicked());
-	    Thread.sleep(2000);
+	    UtilitySearch.waitMethod();
 //	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=4]")).click();
 //	    search.hat4.click();
 	    Assert.assertEquals(true, search.isBrownHatClicked());
-	    Thread.sleep(2000);
+	    UtilitySearch.waitMethod();
 //	    driver.findElement(By.xpath("(//img[@alt='hats'])[position()=5]")).click();
 //	    search.hat5.click();
 	    Assert.assertEquals(true, search.isRedHatClicked());
-	    Thread.sleep(2000);
+	    UtilitySearch.waitMethod();
 	}
 
 	
@@ -190,7 +190,7 @@ public class UnacademySearchSteps {
 	public void user_click_on_search_textbox() throws InterruptedException {
 //		driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
 	    search.searchTextBoxClicked();
-		Thread.sleep(4000);
+	    UtilitySearch.waitMethod();
 	}
 
 	@Then("Trending search list appears")
@@ -225,7 +225,7 @@ public class UnacademySearchSteps {
 //		driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
 		
 		search.searchBoxForCourseClicked();
-	    Thread.sleep(4000);
+		UtilitySearch.waitMethod();
 
 //		WebElement Coursename = driver.findElement(By.xpath("//input[@id='searchInput']"));                                                              
 //		System.out.println(Coursename.isDisplayed());
@@ -235,13 +235,13 @@ public class UnacademySearchSteps {
 		
 		System.out.println("Search value inserted");
 		
-		Thread.sleep(2000);
+		UtilitySearch.waitMethod();
 		
 		
 //		driver.findElement(By.xpath("//*[@id=\"searchTab\"]/div[2]/div/div/a[1]/div/div")).click();
 		search.searchItemClicked();
 		
-		Thread.sleep(5000);
+		UtilitySearch.waitMethod();
 	}
 
 	@Then("course search list appear")
@@ -277,14 +277,15 @@ public class UnacademySearchSteps {
 	public void user_clicks_on_share_button() throws InterruptedException {
 //		driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/div/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/button[2]")).click();
 		search.shareButtonClicked();
-		Thread.sleep(2000);
+		UtilitySearch.waitMethod();
 		
 		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By) search.shareBox));
+		wait.until(ExpectedConditions.visibilityOf(search.shareBox));
+		
 	}
 
 	@Then("user copies the share link")
-	public void user_copies_the_share_link() {
+	public void user_copies_the_share_link() throws InterruptedException {
 		
 //		System.out.println("Share dialogue box: "+driver.findElement(By.xpath("//h3[contains(text(),'Share via')]")).isDisplayed());
 		Assert.assertEquals(true, search.shareDialogueBoxDisplayed());
@@ -292,13 +293,15 @@ public class UnacademySearchSteps {
 		
 		search.shareLinkCopied();
 	    System.out.println("Share link copied!");
+	    UtilitySearch.waitMethod();
 	}
 	@Then("user clicks on the social media icon")
-	public void user_clicks_on_the_social_media_icon() {
+	public void user_clicks_on_the_social_media_icon() throws InterruptedException {
 //	    driver.findElement(By.xpath("//h3[text()='Share via']/following::*[2]")).click();
 //	    driver.findElement(By.xpath("//h3[text()='Share via']/following::*[4]")).click();
 		search.clickFaceBookIcon();
 		search.clickTwitterIcon();
+		UtilitySearch.waitMethod();
 		
 	}
 
