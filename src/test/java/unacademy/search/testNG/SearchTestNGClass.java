@@ -6,6 +6,7 @@ import unacademy.libraries.UtilitySearch;
 import unacademy.page.factory.SearchPF;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,9 +19,12 @@ import java.util.Properties;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -38,7 +42,7 @@ public class SearchTestNGClass {
 	FileOutputStream out;
 	Workbook wBook;
 	Sheet sheet;
-	
+	String dataExcelFile;
 	
 	@BeforeMethod
 	public void beforeMethod() throws IOException {
@@ -52,7 +56,7 @@ public class SearchTestNGClass {
 		String baseUrl = properties.getProperty("baseUrl");
 		String browser = properties.getProperty("browser");
 		String chromedriver = properties.getProperty("chromedriver");
-		
+		dataExcelFile = properties.getProperty("dataExcelFile");
 		driver = UtilitySearch.launchApplication(browser, baseUrl,chromedriver); 
 		search = new SearchPF(driver);
 		
@@ -65,33 +69,54 @@ public class SearchTestNGClass {
 	}
 	
 	
-	
-	
-	
-
-	@Test(priority = 1)
-	public void verifyExplorationOfEducatorProfile() throws InterruptedException, IOException {
-		System.out.println(driver.getTitle());
-		Assert.assertEquals(true, search.homePageDisplayed());
-		search.searchTextBoxClicked(); //change method name
-		Thread.sleep(4000);	
+	@DataProvider(name = "searchitem")
+    public Object[][] getLoginData() throws IOException {
 		
+		String[][] data = null; 
 		String fileName = "testdataSearch.xlsx";
-		file = new File("C:\\Users\\anuttam\\eclipse-workspace\\UnacademyAutomation\\Testdata\\testdataSearch.xlsx"); //Store in config.properties
+		file = new File(dataExcelFile); //Store in config.properties
 		inputStream = new FileInputStream(file);
 		out = null;
 		wBook = null;
 		
 		String fileExtn = fileName.substring(fileName.indexOf("."));
 		System.out.println(fileExtn);
-		if(fileExtn.equals(".xlsx")) {
-			wBook = new XSSFWorkbook(inputStream);
-		}
-		
+		wBook = new XSSFWorkbook(inputStream);
 		sheet = wBook.getSheet("Sheet1");
 		Row row = sheet.getRow(1);
+		
+//		FileInputStream fis = new FileInputStream(fileName);
+//	   	XSSFWorkbook wb = new XSSFWorkbook(fis);
+//	   	XSSFSheet sh = wb.getSheet("Sheet1");
+//	   	XSSFRow row = sh.getRow(0);
+	   	int noOfRows = sheet.getPhysicalNumberOfRows();
+	   	int noOfCols = row.getLastCellNum();
+	   	Cell cell;
+	   	data = new String[noOfRows-1][noOfCols];
+	   	
+	   	for(int i =1; i<noOfRows;i++){
+		     for(int j=0;j<noOfCols;j++){
+		    	   row = sheet.getRow(i);
+		    	   cell= row.getCell(j);
+		    	   data[i-1][j] = cell.getStringCellValue();
+	   	 	   }
+	   	}
+		
+		
+		return data;
+    }
+	
+	
 
-		String searchItem = row.getCell(0).getStringCellValue();
+	@Test(priority = 1, dataProvider = "searchitem")
+	public void verifyExplorationOfEducatorProfile(String educator, String coursename) throws InterruptedException, IOException {
+		System.out.println(driver.getTitle());
+		Assert.assertEquals(true, search.homePageDisplayed());
+		search.searchTextBoxClicked(); //change method name
+		Thread.sleep(4000);	
+	
+
+		String searchItem = educator;
 		search.searchInput(searchItem);
 		
 		System.out.println("Search value inserted");
@@ -138,17 +163,12 @@ public class SearchTestNGClass {
   }
 	
 	
-	@Test(priority = 3)
-	public void verifyExplorationOfCourses() throws InterruptedException {
+	@Test(priority = 3, dataProvider = "searchitem")
+	public void verifyExplorationOfCourses(String educator, String coursename) throws InterruptedException {
 		search.searchBoxForCourseClicked();
 	    Thread.sleep(4000);
-	    
-	    
-	    
-	    sheet = wBook.getSheet("Sheet1");
-		Row row = sheet.getRow(1);
 
-	    String courseName = row.getCell(1).getStringCellValue();
+	    String courseName = coursename;
 	    search.searchBoxClicked(courseName);
 		
 		System.out.println("Search value inserted");
@@ -172,6 +192,11 @@ public class SearchTestNGClass {
 		search.clickFaceBookIcon();
 		search.clickTwitterIcon();  
   }
+	
+	
+	
+	
+	
 }
 
 
