@@ -1,5 +1,6 @@
 package unacademy.page.factory;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -15,22 +16,38 @@ public class SearchPF {
 	public
 	WebElement homePage;
 	
+	public boolean homePageDisplayed()
+	{  
+		return homePage.isDisplayed();
+	}
+	
 	
 	@FindBy(xpath= "//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")
 	public
 	WebElement searchTextBox;
+	public void searchTextBoxClicked()
+	{  
+		searchTextBox.click();
+	}
 	
 	
 	@FindBy(xpath= "//input[@id='searchInput']")
 	public
 	WebElement searchInput;
+	public void searchInput(String searchItem)
+	{  
+		searchInput.sendKeys(searchItem);
+		driver.findElement(By.xpath("//a[contains(@href,'@"+searchItem +"')]")).click();
+	}
 	
-	
-	@FindBy(xpath= "//a[contains(@href,'@sahilchhapola')]") // need change name 
-	public 
-	WebElement searchEducator;
-	
-	
+//	@FindBy(xpath= "//a[contains(@href,'@sahilchhapola')]") // need change name 
+//	public 
+//	WebElement searchEducator;
+//	
+//	public void searchEducatorName()
+//	{  
+//		searchEducator.click();
+//	}
 	
 	
 	
@@ -294,22 +311,8 @@ public class SearchPF {
 		
 	}
 	
-	public boolean homePageDisplayed()
-	{  
-		return homePage.isDisplayed(); //return it to the step definition file and there I need to write Assert functions.
-	}
-	public void searchTextBoxClicked()
-	{  
-		searchTextBox.click();
-	}
-	public void searchInput(String searchItem)
-	{  
-		searchInput.sendKeys(searchItem);
-	}
-	public void searchEducatorName()
-	{  
-		searchEducator.click();
-	}
+
+	
 
 	
 	

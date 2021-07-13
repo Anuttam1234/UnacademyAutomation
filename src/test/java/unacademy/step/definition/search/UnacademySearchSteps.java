@@ -92,14 +92,12 @@ public class UnacademySearchSteps {
 		
 		System.out.println("Search value inserted");
 		
-		Thread.sleep(2000);
 		
 		
 //		driver.findElement(By.xpath("//a[contains(@href,'@sahilchhapola')]")).click();
 		
-		search.searchEducatorName();
+//		search.searchEducatorName();
 		
-		Thread.sleep(5000); //use explicit wait  (dynamic waits)
 		
 	}
 
@@ -122,10 +120,11 @@ public class UnacademySearchSteps {
 	}
 	
 	@Then("dedication drawyer open")
-	public void dedication_drawyer_open() {
+	public void dedication_drawyer_open() throws InterruptedException {
 
 //		System.out.println("Dedication Drawyer: "+driver.findElement(By.xpath("//h2[contains(text(),'Dedications')]")).isDisplayed());
 		Assert.assertEquals(true, search.isDedicationDrawyerOpen());
+		Thread.sleep(2000);
 	}
 	
 	@Then("user clicks on each hat icon")

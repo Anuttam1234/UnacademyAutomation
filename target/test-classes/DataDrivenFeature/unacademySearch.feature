@@ -5,7 +5,7 @@ Feature: Searching module
 
   Scenario: Explore a educator profile
     When user searches educator name
-      | Sahil Chhapola |
+      | sahilchhapola |
     Then user on the educator profile details page
     And user clicks on dedication icon
     Then dedication drawyer open
