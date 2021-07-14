@@ -1,0 +1,284 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 81778500,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User on unacademy home page",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.user_on_unacademy_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-14T05:30:19.518Z",
+        "before": [
+          {
+            "result": {
+              "duration": 10883407100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.setUp()"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Explore a educator profile",
+        "description": "",
+        "id": "searching-module-educator;explore-a-educator-profile",
+        "after": [
+          {
+            "result": {
+              "duration": 807779400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.driverClose()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3576450000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user searches educator name",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.user_searches_educator_name(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "sahilchhapola"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4619068300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user on the educator profile details page",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.user_on_the_educator_profile_details_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 176529800,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user clicks on dedication icon",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.user_clicks_on_dedication_icon()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2429296200,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "dedication drawyer open",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.dedication_drawyer_open()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 10589867000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user clicks on each hat icon",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.user_clicks_on_each_hat_icon()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 60559500,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "user clicks on cross icon",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.user_clicks_on_cross_icon()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 284293900,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "user clicks on profile highlighter",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.user_clicks_on_profile_highlighter()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 371007900,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "profile highlighter drwayer open",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.profile_highlighter_drwayer_open()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 245713400,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user clicks on cross icon again",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.user_clicks_on_cross_icon_again()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 43882800,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User on unacademy home page",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.user_on_unacademy_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-14T05:30:53.723Z",
+        "before": [
+          {
+            "result": {
+              "duration": 8257516000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.setUp()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "Search from Trending search list",
+        "description": "",
+        "id": "searching-module-educator;search-from-trending-search-list",
+        "after": [
+          {
+            "result": {
+              "duration": 805718400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.driverClose()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2347231300,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user click on search textbox",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.user_click_on_search_textbox()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 31799300,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "Trending search list appears",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.trending_search_list_appears()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 167248000,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "user clicks an item from Trending search list",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.user_clicks_an_item_from_Trending_search_list()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1312164700,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "Educator search list appear",
+            "match": {
+              "location": "unacademy.step.definition.search.UnacademySearchSteps.educator_search_list_appear()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Searching module Educator",
+    "description": "",
+    "id": "searching-module-educator",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/DataDrivenFeature/unacademySearch.feature",
+    "tags": []
+  }
+]

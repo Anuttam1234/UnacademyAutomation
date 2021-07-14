@@ -9,7 +9,10 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(features = "src/test/resources/DataDrivenFeature/unacademySearch.feature",
 				 glue = {"unacademy.step.definition.search"},
 				 dryRun = false,
-				 monochrome = true)
+				 monochrome = true,
+				 plugin= {"pretty",
+					        "json:target/testreport/report.json",
+					        "junit:target/testreport/report.xml"})
 
 public class TestRunner {
 	

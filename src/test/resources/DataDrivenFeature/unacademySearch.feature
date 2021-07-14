@@ -1,4 +1,4 @@
-Feature: Searching module
+Feature: Searching module Educator
 
   Background: 
     Given User on unacademy home page
@@ -21,16 +21,4 @@ Feature: Searching module
     And user clicks an item from Trending search list
     Then Educator search list appear
 
-  Scenario Outline: Explore courses 1
-    When user searches course name as "<CourseName>"
-    Then course search list appear
-    And user clicks on specific course
-    Then course preview page appear
-    And user clicks on share button
-    And user copies the share link
-    And user clicks on the social media icon
-    
-
-    Examples: 
-      | CourseName |
-      | UPSC       |
+  

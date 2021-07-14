@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="47.471">
+<testcase classname="Searching module Educator" name="Explore a educator profile" time="34.195">
+<system-out><![CDATA[Given User on unacademy home page...........................................passed
+When user searches educator name............................................passed
+Then user on the educator profile details page..............................passed
+And user clicks on dedication icon..........................................passed
+Then dedication drawyer open................................................passed
+And user clicks on each hat icon............................................passed
+And user clicks on cross icon...............................................passed
+And user clicks on profile highlighter......................................passed
+Then profile highlighter drwayer open.......................................passed
+And user clicks on cross icon again.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Searching module Educator" name="Search from Trending search list" time="12.966">
+<system-out><![CDATA[Given User on unacademy home page...........................................passed
+When user click on search textbox...........................................passed
+Then Trending search list appears...........................................passed
+And user clicks an item from Trending search list...........................passed
+Then Educator search list appear............................................passed
+]]></system-out>
+</testcase>
+</testsuite>
