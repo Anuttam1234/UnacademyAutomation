@@ -26,7 +26,7 @@ public class UtilitySearch {
 	}
 	
 	public static void waitMethod() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(3);
 	}
 
 }

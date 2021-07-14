@@ -75,7 +75,7 @@ public class UnacademySearchSteps {
 	
 
 //	    driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
-	    search.searchTextBoxClicked(); //change method name
+	    search.searchTextBoxClick(); //change method name
 	    UtilitySearch.waitMethod();
 	    List<String> data = dataTable.asList();
 		String searchItem = data.get(0);
@@ -189,7 +189,7 @@ public class UnacademySearchSteps {
 	@When("user click on search textbox")
 	public void user_click_on_search_textbox() throws InterruptedException {
 //		driver.findElement(By.xpath("//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")).click(); //first click
-	    search.searchTextBoxClicked();
+	    search.searchTextBoxClick();
 	    UtilitySearch.waitMethod();
 	}
 

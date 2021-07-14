@@ -25,7 +25,7 @@ public class SearchPF {
 	@FindBy(xpath= "//div[@id=\"searchTab\"]/div[contains(@class,'MuiInputBase-root')]")
 	public
 	WebElement searchTextBox;
-	public void searchTextBoxClicked()
+	public void searchTextBoxClick()
 	{  
 		searchTextBox.click();
 	}
