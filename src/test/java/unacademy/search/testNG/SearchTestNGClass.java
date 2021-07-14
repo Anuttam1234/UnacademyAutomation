@@ -192,7 +192,7 @@ public class SearchTestNGClass {
 		System.out.println("Course search value inserted");
 		
 		wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOf(search.shareBox));
+		wait.until(ExpectedConditions.visibilityOf(search.clickSearchItem));
 		//Search item click from suggestion list
 		search.searchItemClick();
 		

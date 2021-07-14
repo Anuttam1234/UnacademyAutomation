@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
-          <include name="verifyExplorationOfCourses" invocation-numbers="0"/>
+          <include name="verifySearchingFromTrendingSearchList"/>
         </methods>
       </class> <!-- unacademy.search.testNG.SearchTestNGClass -->
     </classes>
