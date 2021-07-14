@@ -65,7 +65,7 @@ public class SearchPF {
 	public
 	WebElement dedicationIcon;
 	
-	public void dedicationIconClicked()
+	public void dedicationIconClick()
 	{  
 		dedicationIcon.click();
 	}
@@ -89,7 +89,7 @@ public class SearchPF {
 	public
 	WebElement greenHatappear;
 	
-	public boolean isGreenHatClicked()
+	public boolean isGreenHatClick()
 	{  
 		hat1.click();
 		return greenHatappear.isDisplayed();
@@ -103,7 +103,7 @@ public class SearchPF {
 	@FindBy(xpath= "//h6[contains(text(),'Blue Hat')]")  
 	public
 	WebElement blueHatappear;
-	public boolean isBlueHatClicked()
+	public boolean isBlueHatClick()
 	{  
 		hat2.click();
 		return blueHatappear.isDisplayed();
@@ -116,7 +116,7 @@ public class SearchPF {
 	@FindBy(xpath= "//h6[contains(text(),'Purple Hat')]")  
 	public
 	WebElement purpleHatappear;
-	public boolean isPurpleHatClicked()
+	public boolean isPurpleHatClick()
 	{  
 		hat3.click();
 		return purpleHatappear.isDisplayed();
@@ -128,7 +128,7 @@ public class SearchPF {
 	@FindBy(xpath= "//h6[contains(text(),'Brown Hat')]")  
 	public
 	WebElement brownHatappear;
-	public boolean isBrownHatClicked()
+	public boolean isBrownHatClick()
 	{  
 		hat4.click();
 		return brownHatappear.isDisplayed();
@@ -141,7 +141,7 @@ public class SearchPF {
 	@FindBy(xpath= "//h6[contains(text(),'Red Hat')]")  
 	public
 	WebElement redHatappear;
-	public boolean isRedHatClicked()
+	public boolean isRedHatClick()
 	{  
 		hat5.click();
 		return redHatappear.isDisplayed();
@@ -151,14 +151,14 @@ public class SearchPF {
 	@FindBy(xpath= "//h2[text()='Dedications']/preceding::*[1]")
 	public
 	WebElement dedicationCrossIcon;
-	public void dedicationCrossIconClicked()
+	public void dedicationCrossIconClick()
 	{  
 		dedicationCrossIcon.click();
 	}
 	@FindBy(xpath= "//h6[contains(text(),'Teaches')]")
 	public
 	WebElement profileHighlighter;
-	public void profileHighlighterClicked()
+	public void profileHighlighterClick()
 	{  
 		profileHighlighter.click();
 	}
@@ -172,7 +172,7 @@ public class SearchPF {
 	@FindBy(xpath= "//h2[text()='Bank Exams Educators']/preceding::*[1]")
 	public
 	WebElement profileCrossIcon;
-	public void isProfileCrossIconClicked()
+	public void isProfileCrossIconClick()
 	{  
 		profileCrossIcon.click();
 	}
@@ -195,7 +195,7 @@ public class SearchPF {
 	@FindBy(xpath= "//p[contains(@class,'Popularitem__P')][position()=1]")
 	public
 	WebElement trendingSearchItem;
-	public void trendingSearchItemClicked()
+	public void trendingSearchItemClick()
 	{  
 		trendingSearchItem.click();
 	}
@@ -216,14 +216,14 @@ public class SearchPF {
 	@FindBy(xpath= "//div[contains(@class,'SearchTab__SearchTextField')]")
 	public
 	WebElement clickSearchTextBox;
-	public void searchBoxForCourseClicked()
+	public void searchBoxForCourseClick()
 	{  
 		clickSearchTextBox.click();
 	}
 	@FindBy(xpath= "//input[@id='searchInput']")
 	public
 	WebElement inputCourse;
-	public void searchBoxClicked(String courseName)
+	public void searchBoxClick(String courseName)
 	{  
 		inputCourse.sendKeys(courseName);
 	}
@@ -231,7 +231,7 @@ public class SearchPF {
 	public
 	WebElement clickSearchItem;
 	
-	public void searchItemClicked()
+	public void searchItemClick()
 	{  
 		clickSearchItem.click();
 	}
@@ -249,7 +249,7 @@ public class SearchPF {
 	public
 	WebElement clickCourse;
 	
-	public void isCourseClicked() {
+	public void isCourseClick() {
 		clickCourse.click();
 	}
 	
@@ -270,7 +270,7 @@ public class SearchPF {
 	public
 	WebElement shareButton;
 	
-	public void shareButtonClicked() {
+	public void shareButtonClick() {
 		shareButton.click();
 	}
 	

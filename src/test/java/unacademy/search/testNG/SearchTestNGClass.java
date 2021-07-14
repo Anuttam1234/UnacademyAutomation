@@ -34,7 +34,7 @@ public class SearchTestNGClass {
 	SearchPF search;
 	
 	WebDriver driver;
-	
+	WebDriverWait wait;
 	File file;
 	FileInputStream inputStream;
 	FileOutputStream out;
@@ -116,11 +116,11 @@ public class SearchTestNGClass {
 		Assert.assertEquals(true, search.isTrendingListAppeared());
 		
 		//Clicking the search value from Trending search item
-		search.trendingSearchItemClicked();
+		search.trendingSearchItemClick();
 		//Checking the Educator search List page displayed or not
 		Assert.assertEquals(true, search.isEducatorSearchListDisplayed());
 		System.out.println("Educator search list appear!");
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		
 	  
   }
 	
@@ -134,7 +134,6 @@ public class SearchTestNGClass {
 		Assert.assertEquals(true, search.homePageDisplayed());
 		
 		search.searchTextBoxClick(); //Clicking the search text box
-		UtilitySearch.waitMethod();
 		//Passing the search item value
 		String searchItem = educator;
 		
@@ -147,33 +146,33 @@ public class SearchTestNGClass {
 		System.out.println(driver.getTitle());
 	    Assert.assertEquals(true, search.isEducatorProfiledisplayed());
 	    //clicking dedication icon
-	    search.dedicationIconClicked();
+	    search.dedicationIconClick();
 	    driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 	    Assert.assertEquals(true, search.isDedicationDrawyerOpen());
 	    
 	    //Clicking each hat from dedication drawer
-		Assert.assertEquals(true, search.isGreenHatClicked());
+		Assert.assertEquals(true, search.isGreenHatClick());
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-	    Assert.assertEquals(true, search.isBlueHatClicked());
+	    Assert.assertEquals(true, search.isBlueHatClick());
 	    driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-	    Assert.assertEquals(true, search.isPurpleHatClicked());
+	    Assert.assertEquals(true, search.isPurpleHatClick());
 	    driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-	    Assert.assertEquals(true, search.isBrownHatClicked());
+	    Assert.assertEquals(true, search.isBrownHatClick());
 	    driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-	    Assert.assertEquals(true, search.isRedHatClicked());
+	    Assert.assertEquals(true, search.isRedHatClick());
 	    driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 	    //Clicking cross icon to close the drawer
-	    search.dedicationCrossIconClicked();
+	    search.dedicationCrossIconClick();
 	    
 		System.out.println("Profile Highlighter going to click");
 		
 		//Clicking on profile highlighter link to open highlighter drawer
-		search.profileHighlighterClicked();
-		System.out.println("Profile Highlighter clicked");
+		search.profileHighlighterClick();
+		System.out.println("Profile Highlighter Click");
 		Assert.assertEquals(true,search.profileDrawyerOpened());
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		//Clicking cross icon to close the drawer
-		search.isProfileCrossIconClicked();
+		search.isProfileCrossIconClick();
   }
 
 	
@@ -183,18 +182,19 @@ public class SearchTestNGClass {
 	@Test(priority = 3, dataProvider = "searchitem")
 	public void verifyExplorationOfCourses(String educator, String coursename) throws InterruptedException {
 		//Clicking the search text box
-		search.searchBoxForCourseClicked();
+		search.searchBoxForCourseClick();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	    
 	    //Passing the value to search
 	    String courseName = coursename;
-	    search.searchBoxClicked(courseName);
+	    search.searchBoxClick(courseName);
 		
 		System.out.println("Course search value inserted");
 		
-		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+		wait = new WebDriverWait(driver, 5);
+		wait.until(ExpectedConditions.visibilityOf(search.shareBox));
 		//Search item click from suggestion list
-		search.searchItemClicked();
+		search.searchItemClick();
 		
 		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 		//Checking the course list appeared or not
@@ -205,14 +205,14 @@ public class SearchTestNGClass {
 		js.executeScript("window.scrollBy(45,65)");	
 		
 		//Clicking on  course link
-		search.isCourseClicked();
+		search.isCourseClick();
 		
 		//Checcking the Course preview page Displayed or not
 		Assert.assertEquals(true, search.isCoursePreviewPageDisplayed());
-		search.shareButtonClicked();
+		search.shareButtonClick();
 		
 		
-		WebDriverWait wait = new WebDriverWait(driver, 5);
+		wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.visibilityOf(search.shareBox));
 		
 		
