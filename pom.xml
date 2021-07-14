@@ -4,19 +4,23 @@
   <artifactId>UnacademyAutomation</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  
   <dependencies>
+  
   	<dependency>
-    	<groupId>io.cucumber</groupId>
-    	<artifactId>cucumber-java</artifactId>
-    	<version>5.5.0</version>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>6.10.4</version>
+    <scope>test</scope>
 	</dependency>
   	
   	<dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-junit</artifactId>
-    <version>5.5.0</version>
+    <version>6.10.4</version>
     <scope>test</scope>
-</dependency> 
+</dependency>
+
   	
   <dependency>
     <groupId>junit</groupId>
@@ -46,6 +50,13 @@
     <scope>test</scope>
 </dependency>
 
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-testng</artifactId>
+    <version>6.10.4</version>
+    <scope>test</scope>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 <dependency>
     <groupId>org.apache.poi</groupId>
@@ -63,6 +74,18 @@
 </dependency>
   
   </dependencies>
+  
+  <build>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.2</version>
+          </plugin>
+          
+          
+      </plugins>
+  </build>
   
   
 </project>

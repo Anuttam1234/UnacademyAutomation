@@ -2,82 +2,38 @@
 <testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-13T15:16:35 IST" name="Default suite" finished-at="2021-07-13T15:17:39 IST" duration-ms="64772">
+  <suite started-at="2021-07-14T15:43:59 IST" name="Suite" finished-at="2021-07-14T15:45:11 IST" duration-ms="71633">
     <groups>
     </groups>
-    <test started-at="2021-07-13T15:16:35 IST" name="Default test" finished-at="2021-07-13T15:17:39 IST" duration-ms="64772">
+    <test started-at="2021-07-14T15:43:59 IST" name="Test" finished-at="2021-07-14T15:45:11 IST" duration-ms="71633">
       <class name="unacademy.search.testNG.SearchTestNGClass">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@393671df]" started-at="2021-07-13T15:16:35 IST" name="beforeMethod" finished-at="2021-07-13T15:16:43 IST" duration-ms="8436" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@6973b51b]" started-at="2021-07-14T15:43:59 IST" name="beforeMethod" finished-at="2021-07-14T15:44:08 IST" duration-ms="8609" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifySearchingFromTrendingSearchList()[pri:1, instance:unacademy.search.testNG.SearchTestNGClass@393671df]" started-at="2021-07-13T15:16:43 IST" name="verifySearchingFromTrendingSearchList" finished-at="2021-07-13T15:16:49 IST" duration-ms="6343" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySearchingFromTrendingSearchList -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@393671df]" started-at="2021-07-13T15:16:49 IST" name="afterMethod" finished-at="2021-07-13T15:16:50 IST" duration-ms="779" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@393671df]" started-at="2021-07-13T15:16:51 IST" name="beforeMethod" finished-at="2021-07-13T15:16:58 IST" duration-ms="7398" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyExplorationOfEducatorProfile(java.lang.String,java.lang.String)[pri:2, instance:unacademy.search.testNG.SearchTestNGClass@393671df]" started-at="2021-07-13T15:16:58 IST" name="verifyExplorationOfEducatorProfile" data-provider="searchitem" finished-at="2021-07-13T15:17:21 IST" duration-ms="23204" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[sahilchhapola]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[UPSC]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyExplorationOfEducatorProfile -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@393671df]" started-at="2021-07-13T15:17:21 IST" name="afterMethod" finished-at="2021-07-13T15:17:22 IST" duration-ms="765" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@393671df]" started-at="2021-07-13T15:17:22 IST" name="beforeMethod" finished-at="2021-07-13T15:17:30 IST" duration-ms="7496" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyExplorationOfCourses(java.lang.String,java.lang.String)[pri:3, instance:unacademy.search.testNG.SearchTestNGClass@393671df]" started-at="2021-07-13T15:17:30 IST" name="verifyExplorationOfCourses" data-provider="searchitem" finished-at="2021-07-13T15:17:38 IST" duration-ms="8843" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[sahilchhapola]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[UPSC]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        <test-method signature="verifySearchingFromTrendingSearchList()[pri:1, instance:unacademy.search.testNG.SearchTestNGClass@6973b51b]" started-at="2021-07-14T15:44:08 IST" name="verifySearchingFromTrendingSearchList" finished-at="2021-07-14T15:44:16 IST" duration-ms="8296" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[element click intercepted: Element is not clickable at point (538, 598)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//h2[contains(text(),'Educators')]"}
   (Session info: chrome=91.0.4472.124)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-2NE1IOF', ip: '192.168.0.167', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.124, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\anuttam\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:57062}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0623ad3d12e636833d84e2d278a0c956]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.124, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\anuttam\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:61695}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 89f301197f79d0dad781da0cc531bca6
+*** Element info: {Using=xpath, value=//h2[contains(text(),'Educators')]}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (538, 598)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h2[contains(text(),'Educators')]"}
   (Session info: chrome=91.0.4472.124)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-2NE1IOF', ip: '192.168.0.167', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.124, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\anuttam\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:57062}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 0623ad3d12e636833d84e2d278a0c956
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.124, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\anuttam\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:61695}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 89f301197f79d0dad781da0cc531bca6
+*** Element info: {Using=xpath, value=//h2[contains(text(),'Educators')]}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -89,16 +45,15 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at com.sun.proxy.$Proxy14.click(Unknown Source)
-at unacademy.page.factory.SearchPF.isCourseClicked(SearchPF.java:253)
-at unacademy.search.testNG.SearchTestNGClass.verifyExplorationOfCourses(SearchTestNGClass.java:203)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy14.isDisplayed(Unknown Source)
+at unacademy.page.factory.SearchPF.isEducatorSearchListDisplayed(SearchPF.java:207)
+at unacademy.search.testNG.SearchTestNGClass.verifySearchingFromTrendingSearchList(SearchTestNGClass.java:117)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -129,15 +84,63 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchingFromTrendingSearchList -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@6973b51b]" started-at="2021-07-14T15:44:16 IST" name="afterMethod" finished-at="2021-07-14T15:44:17 IST" duration-ms="796" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@6973b51b]" started-at="2021-07-14T15:44:18 IST" name="beforeMethod" finished-at="2021-07-14T15:44:27 IST" duration-ms="8989" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyExplorationOfEducatorProfile(java.lang.String,java.lang.String)[pri:2, instance:unacademy.search.testNG.SearchTestNGClass@6973b51b]" started-at="2021-07-14T15:44:27 IST" name="verifyExplorationOfEducatorProfile" data-provider="searchitem" finished-at="2021-07-14T15:44:49 IST" duration-ms="22509" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sahilchhapola]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[UPSC]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyExplorationOfEducatorProfile -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@6973b51b]" started-at="2021-07-14T15:44:49 IST" name="afterMethod" finished-at="2021-07-14T15:44:50 IST" duration-ms="774" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@6973b51b]" started-at="2021-07-14T15:44:50 IST" name="beforeMethod" finished-at="2021-07-14T15:44:58 IST" duration-ms="7816" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyExplorationOfCourses(java.lang.String,java.lang.String)[pri:3, instance:unacademy.search.testNG.SearchTestNGClass@6973b51b]" started-at="2021-07-14T15:44:58 IST" name="verifyExplorationOfCourses" data-provider="searchitem" finished-at="2021-07-14T15:45:10 IST" duration-ms="12396" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sahilchhapola]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[UPSC]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyExplorationOfCourses -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@393671df]" started-at="2021-07-13T15:17:38 IST" name="afterMethod" finished-at="2021-07-13T15:17:39 IST" duration-ms="801" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:unacademy.search.testNG.SearchTestNGClass@6973b51b]" started-at="2021-07-14T15:45:10 IST" name="afterMethod" finished-at="2021-07-14T15:45:11 IST" duration-ms="750" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- unacademy.search.testNG.SearchTestNGClass -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
