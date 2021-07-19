@@ -40,14 +40,7 @@ public class SearchPF {
 		driver.findElement(By.xpath("//a[contains(@href,'@"+searchItem +"')]")).click();
 	}
 	
-//	@FindBy(xpath= "//a[contains(@href,'@sahilchhapola')]") // need change name 
-//	public 
-//	WebElement searchEducator;
-//	
-//	public void searchEducatorName()
-//	{  
-//		searchEducator.click();
-//	}
+
 	
 	
 	

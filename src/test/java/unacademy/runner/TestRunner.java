@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/DataDrivenFeature/unacademySearchCourse.feature",
+@CucumberOptions(features = "src/test/resources/DataDrivenFeature",
 				 glue = {"unacademy.step.definition.search"},
 				 dryRun = false,
 				 monochrome = true)

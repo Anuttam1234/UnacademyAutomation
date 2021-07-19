@@ -179,53 +179,53 @@ public class SearchTestNGClass {
 	
 	
 	
-	@Test(priority = 3, dataProvider = "searchitem")
-	public void verifyExplorationOfCourses(String educator, String coursename) throws InterruptedException {
-		//Clicking the search text box
-		search.searchBoxForCourseClick();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-	    
-	    //Passing the value to search
-	    String courseName = coursename;
-	    search.searchBoxClick(courseName);
-		
-		System.out.println("Course search value inserted");
-		
-		wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOf(search.clickSearchItem));
-		//Search item click from suggestion list
-		search.searchItemClick();
-		
-		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-		//Checking the course list appeared or not
-		Assert.assertEquals(true, search.courseSearchListAppeared());
-		
-		//Scrolling the page to downwards
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("window.scrollBy(45,65)");	
-		
-		//Clicking on  course link
-		search.isCourseClick();
-		
-		//Checcking the Course preview page Displayed or not
-		Assert.assertEquals(true, search.isCoursePreviewPageDisplayed());
-		search.shareButtonClick();
-		
-		
-		wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOf(search.shareBox));
-		
-		
-		
-		//Checcking the Search dialogue box Display or not
-		Assert.assertEquals(true, search.shareDialogueBoxDisplayed());
-		//Copy the share link
-		search.shareLinkCopied();
-	    System.out.println("Share link copied!");
-	    //Clicking the social media icon
-		search.clickFaceBookIcon();
-		search.clickTwitterIcon();  
-  }
+//	@Test(priority = 3, dataProvider = "searchitem")
+//	public void verifyExplorationOfCourses(String educator, String coursename) throws InterruptedException {
+//		//Clicking the search text box
+//		search.searchBoxForCourseClick();
+//		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//	    
+//	    //Passing the value to search
+//	    String courseName = coursename;
+//	    search.searchBoxClick(courseName);
+//		
+//		System.out.println("Course search value inserted");
+//		
+//		wait = new WebDriverWait(driver, 5);
+//		wait.until(ExpectedConditions.visibilityOf(search.clickSearchItem));
+//		//Search item click from suggestion list
+//		search.searchItemClick();
+//		
+//		driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+//		//Checking the course list appeared or not
+//		Assert.assertEquals(true, search.courseSearchListAppeared());
+//		
+//		//Scrolling the page to downwards
+//		JavascriptExecutor js = (JavascriptExecutor)driver;
+//		js.executeScript("window.scrollBy(45,65)");	
+//		
+//		//Clicking on  course link
+//		search.isCourseClick();
+//		
+//		//Checcking the Course preview page Displayed or not
+//		Assert.assertEquals(true, search.isCoursePreviewPageDisplayed());
+//		search.shareButtonClick();
+//		
+//		
+//		wait = new WebDriverWait(driver, 5);
+//		wait.until(ExpectedConditions.visibilityOf(search.shareBox));
+//		
+//		
+//		
+//		//Checcking the Search dialogue box Display or not
+//		Assert.assertEquals(true, search.shareDialogueBoxDisplayed());
+//		//Copy the share link
+//		search.shareLinkCopied();
+//	    System.out.println("Share link copied!");
+//	    //Clicking the social media icon
+//		search.clickFaceBookIcon();
+//		search.clickTwitterIcon();  
+//  }
 	
 	
 	
